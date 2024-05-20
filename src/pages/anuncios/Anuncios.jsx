@@ -7,16 +7,11 @@ import AdminAnuncios from "./AdminAnuncios";
 import Login from "./Login";
 
 export default function Anuncios() {
-  const [userType, setUserType] = useState("user");
-  const navigate = useNavigate();
 
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      <Route
-        path="/admin"
-        element={<AdminAnuncios />}
-      />
+      <Route path="/admin" element={<AdminAnuncios />} />
       <Route path="/" element={<UserAnuncios />} />
     </Routes>
   );

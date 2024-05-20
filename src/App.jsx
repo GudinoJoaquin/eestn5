@@ -5,6 +5,7 @@ import Nosotros from "./pages/home/Nosotros.jsx";
 import Especialidades from "./pages/home/Especialidades.jsx";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Anuncios from "./pages/anuncios/Anuncios.jsx";
+import AdminAnuncios from "./pages/anuncios/AdminAnuncios.jsx";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/especialidades" element={<Especialidades />} />
+        <Route path="/anuncios/admin" element={<AdminAnuncios/>}/>
       </Routes>
     </Router>
   );
