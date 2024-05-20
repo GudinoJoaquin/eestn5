@@ -61,6 +61,12 @@ export default function Nav() {
             Inicio
           </Link>
           <Link
+            to="/anuncios"
+            className="text-lg text-slate-200 mx-auto transition duration-300 ease-in-out hover:text-green-500"
+          >
+            Anuncios
+          </Link>
+          <Link
             to="../Especialidades"
             className="text-lg text-slate-200 mx-auto transition duration-300 ease-in-out hover:text-green-500"
           >
