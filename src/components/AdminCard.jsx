@@ -94,7 +94,7 @@ export default function AdminCard({
                 </h5>
               </div>
               <p className="font-sans font-light leading-relaxed text-wrap flex-1">
-                {truncateText(mensaje, 500)}
+                {truncateText(mensaje, 450)}
               </p>
               <div className="flex gap-[50px] ml-[20px] mt-[10px]">
                 <button
