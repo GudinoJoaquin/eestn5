@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Anuncios from "./pages/anuncios/Anuncios.jsx";
 import AdminAnuncios from "./pages/anuncios/AdminAnuncios.jsx";
 import NotFound from "./pages/NotFound.jsx";
-import './assets/css/app.css'
 
 export default function App() {
   return (
