@@ -1,19 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function ThemeSwitch() {
-  const [isChecked, setIsChecked] = useState(false);
+  // Leer la preferencia de tema del localStorage o usar false por defecto
+  const [isChecked, setIsChecked] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme === "dark";
+  });
 
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked); // Invierte el valor actual
-    if (!isChecked) {
-      console.log("Desactivado");
-      // Remover la clase 'dark' del elemento HTML
+  useEffect(() => {
+    // Aplicar el tema al cargar el componente basado en la preferencia almacenada
+    if (isChecked) {
       document.documentElement.classList.add("dark");
     } else {
-      console.log("Activado");
-      // Agregar la clase 'dark' al elemento HTML
       document.documentElement.classList.remove("dark");
     }
+  }, [isChecked]);
+
+  const handleCheckboxChange = () => {
+    setIsChecked((prevChecked) => {
+      const newChecked = !prevChecked;
+      // Guardar la preferencia en localStorage
+      localStorage.setItem("theme", newChecked ? "dark" : "light");
+
+      // Aplicar el tema inmediatamente después de cambiar la preferencia
+      if (newChecked) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      return newChecked;
+    });
   };
 
   return (
