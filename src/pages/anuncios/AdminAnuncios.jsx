@@ -45,7 +45,7 @@ export default function AdminAnuncios() {
         <header className="flex justify-end items-center gap-[30px] md:translate-y-[2px] translate-y-[20px] ml-[10px] dark:text-slate-200">
           <button
             className="text-emerald-600 scale-[1.2] font-bold text-[20px] transition duration-[.3s]"
-            onClick={() => handleNavigation("http://localhost:5173/")}
+            onClick={() => handleNavigation("https://eestn5-rho.vercel.app/anuncios/")}
           >
             Inicio
           </button>
@@ -60,7 +60,7 @@ export default function AdminAnuncios() {
           <button
             className="hover:text-red-500 hover:scale-110 font-semibold text-[20px] transition duration-[.3s]"
             onClick={() =>
-              (window.location.href = "http://localhost:1234/logoff")
+              (window.location.href = "https://server-xi-lemon.vercel.app/logoff")
             }
           >
             Salir
