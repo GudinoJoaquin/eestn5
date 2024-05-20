@@ -4,9 +4,11 @@ import ThemeSwitch from "../../components/ThemeSwitch";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
+import Loader from "react-js-loader";
 
 export default function AdminAnuncios() {
   const [anuncios, setAnuncios] = useState([]);
+  const [loading, setLoading] = useState(true); // Estado para manejar el loading
   const [currentPage, setCurrentPage] = useState(1);
   const anunciosPerPage = 5;
 
@@ -22,9 +24,11 @@ export default function AdminAnuncios() {
       .then((data) => {
         console.log(data);
         setAnuncios(data);
+        setLoading(false); // Una vez que los datos se cargan, establecemos loading en false
       })
       .catch((err) => {
         console.error(err);
+        setLoading(false); // Si hay un error, también establecemos loading en false
       });
   }, []);
 
@@ -64,47 +68,61 @@ export default function AdminAnuncios() {
           </Link>
           <ThemeSwitch />
         </header>
-        <div className="flex justify-center items-center gap-2 mb-[-50px] mt-[20px]">
-          {Array.from(
-            { length: Math.ceil(anuncios.length / anunciosPerPage) },
-            (_, i) => (
-              <button
-                className="dark:text-slate-200 dark:hover:bg-blue-900 font-semibold underline underline-offset-2 p-[4px] my-2 rounded-sm hover:scale-[1.2] hover:bg-red-100 transition duration-[.3s]"
-                key={i + 1}
-                onClick={() => setCurrentPage(i + 1)}
-              >
-                {i + 1}
-              </button>
-            )
-          )}
-        </div>
+        {loading ? ( // Renderizar el loader si loading es true
+          <div className="flex justify-center items-center h-screen">
+            <Loader
+              type="spinner-default"
+              bgColor={"#3b83f6"}
+              title={"Cargando..."}
+              color={"#3b83f6"}
+              size={100}
+            />
+          </div>
+        ) : (
+          <>
+            <div className="flex justify-center items-center gap-2 mb-[-50px] mt-[20px]">
+              {Array.from(
+                { length: Math.ceil(anuncios.length / anunciosPerPage) },
+                (_, i) => (
+                  <button
+                    className="dark:text-slate-200 dark:hover:bg-blue-900 font-semibold underline underline-offset-2 p-[4px] my-2 rounded-sm hover:scale-[1.2] hover:bg-red-100 transition duration-[.3s]"
+                    key={i + 1}
+                    onClick={() => setCurrentPage(i + 1)}
+                  >
+                    {i + 1}
+                  </button>
+                )
+              )}
+            </div>
 
-        {currentAds.map((anuncio) => (
-          <AdminCard
-            key={anuncio.id}
-            id={anuncio.id}
-            img={anuncio.imagen}
-            titulo={anuncio.titulo}
-            mensaje={anuncio.mensaje}
-            fecha={anuncio.fecha}
-            adjunto={anuncio.contenido_adjunto}
-          />
-        ))}
-        {/* Botones de paginación */}
-        <div className="flex justify-center items-center gap-2">
-          {Array.from(
-            { length: Math.ceil(anuncios.length / anunciosPerPage) },
-            (_, i) => (
-              <button
-                className="dark:text-slate-200 dark:hover:bg-blue-900 font-semibold underline underline-offset-2 p-[4px] my-2 rounded-sm hover:scale-[1.2] hover:bg-red-100 transition duration-[.3s]"
-                key={i + 1}
-                onClick={() => setCurrentPage(i + 1)}
-              >
-                {i + 1}
-              </button>
-            )
-          )}
-        </div>
+            {currentAds.map((anuncio) => (
+              <AdminCard
+                key={anuncio.id}
+                id={anuncio.id}
+                img={anuncio.imagen}
+                titulo={anuncio.titulo}
+                mensaje={anuncio.mensaje}
+                fecha={anuncio.fecha}
+                adjunto={anuncio.contenido_adjunto}
+              />
+            ))}
+            {/* Botones de paginación */}
+            <div className="flex justify-center items-center gap-2">
+              {Array.from(
+                { length: Math.ceil(anuncios.length / anunciosPerPage) },
+                (_, i) => (
+                  <button
+                    className="dark:text-slate-200 dark:hover:bg-blue-900 font-semibold underline underline-offset-2 p-[4px] my-2 rounded-sm hover:scale-[1.2] hover:bg-red-100 transition duration-[.3s]"
+                    key={i + 1}
+                    onClick={() => setCurrentPage(i + 1)}
+                  >
+                    {i + 1}
+                  </button>
+                )
+              )}
+            </div>
+          </>
+        )}
       </div>
       <Footer />
     </>

@@ -6,12 +6,14 @@ import Especialidades from "./pages/home/Especialidades.jsx";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Anuncios from "./pages/anuncios/Anuncios.jsx";
 import AdminAnuncios from "./pages/anuncios/AdminAnuncios.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 export default function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/notfound" element={<NotFound/>}/>
         <Route path="/anuncios/*" element={<Anuncios/>}/>
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/nosotros" element={<Nosotros />} />

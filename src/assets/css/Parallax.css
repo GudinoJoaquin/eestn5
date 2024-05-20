@@ -14,3 +14,21 @@
   text-align: center; /* Añade esta línea para centrar el texto */
   user-select: none;
 }
+
+.parallax-completo2 {
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.7) 100%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url("../img/idi2o.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Añade esta línea para que los elementos se posicionen uno debajo del otro */
+  text-align: center; /* Añade esta línea para centrar el texto */
+  user-select: none;
+}
+

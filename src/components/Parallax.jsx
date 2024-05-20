@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/css/Parallax.css";
 
-export default function Parallax({ children }) {
-  return <div className="parallax-completo">{children}</div>;
+export default function Parallax({ children, parallax = 'completo' }) {
+  return <div className={`parallax-${parallax}`}>{children}</div>;
 }
