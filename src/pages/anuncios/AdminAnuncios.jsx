@@ -3,6 +3,7 @@ import AdminCard from "../../components/AdminCard";
 import ThemeSwitch from "../../components/ThemeSwitch";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 
 export default function AdminAnuncios() {
   const [anuncios, setAnuncios] = useState([]);
@@ -11,7 +12,7 @@ export default function AdminAnuncios() {
 
   useEffect(() => {
     // Obtener el valor de la cookie "userType"
-    console.log(document.cookie)
+    console.log(document.cookie);
   }, []);
 
   useEffect(() => {
@@ -43,28 +44,24 @@ export default function AdminAnuncios() {
       <Nav />
       <div className="bg-white dark:bg-slate-900 ">
         <header className="flex justify-end items-center gap-[30px] md:translate-y-[2px] translate-y-[20px] ml-[10px] dark:text-slate-200">
-          <button
+          <Link
             className="text-emerald-600 scale-[1.2] font-bold text-[20px] transition duration-[.3s]"
-            onClick={() => handleNavigation("https://eestn5-rho.vercel.app/anuncios/")}
+            to=""
           >
             Inicio
-          </button>
-          <button
-            className="hover:text-orange-500 hover:scale-110 font-semibold text-[20px] transition duration-[.3s]"
-            onClick={() =>
-              handleNavigation("http://localhost:5173/admin/crearAnuncio")
-            }
+          </Link>
+          <Link
+            className="hover:text-orange-600 scale-110 font-bold text-[20px] transition duration-[.3s]"
+            to="./crearAnuncio"
           >
             Crear anuncio
-          </button>
-          <button
+          </Link>
+          <Link
             className="hover:text-red-500 hover:scale-110 font-semibold text-[20px] transition duration-[.3s]"
-            onClick={() =>
-              (window.location.href = "https://server-xi-lemon.vercel.app/logoff")
-            }
+            to="https://server-xi-lemon.vercel.app/logoff"
           >
             Salir
-          </button>
+          </Link>
           <ThemeSwitch />
         </header>
         <div className="flex justify-center items-center gap-2 mb-[-50px] mt-[20px]">

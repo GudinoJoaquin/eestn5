@@ -41,26 +41,27 @@ export default function AdminCard({
   };
 
   const confirmarEliminar = () => {
-    fetch(`http://localhost:1234/eliminar-anuncio?id=${id}`, {
+    console.log(`Eliminando anuncio con id: ${id}`);
+    fetch(`https://server-xi-lemon.vercel.app/eliminar-anuncio?id=${id}`, {
       method: "DELETE",
     })
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error al eliminar el anuncio");
-        }
-        // Si la eliminación es exitosa, redirecciona a la página de anuncios
+        console.log("Respuesta del servidor:", response);
+      })
+      .then((data) => {
+        console.log("Datos recibidos del servidor:", data);
+        toast.success("Anuncio eliminado correctamente");
         setTimeout(() => {
-          toast.success("Anuncio eliminado correctamente");
+          toast.loading("Volviendo al inicio");
           setTimeout(() => {
-            toast.loading("Volviendo al inicio");
-            setTimeout(() => {
-              window.location.href = "http://localhost:5173/";
-            }, 2000);
-          }, 1000);
+            window.location.href =
+              "https://eestn5-rho.vercel.app/anuncios/adminadminadminadminadminadminadminadminadminadminadminadmin";
+          }, 2000);
         }, 1000);
       })
       .catch((error) => {
-        console.error("Error:", error);
+        console.error("Error al eliminar el anuncio:", error);
+        toast.error("Error al eliminar el anuncio");
       });
   };
 
@@ -79,7 +80,7 @@ export default function AdminCard({
 
   return (
     <div className="flex justify-center items-center mt-[100px] overflow-x-hidden bg-white dark:bg-slate-900">
-      <Toaster richColors closeButton/>
+      <Toaster richColors closeButton />
       <div className="relative w-full xl:h-64 max-w-[400px] xl:w-full xl:max-w-[90vw] mx-4 flex xl:flex-row flex-col rounded-xl bg-white dark:bg-slate-950 dark:text-slate-200 bg-clip-border text-gray-700 shadow-xl">
         <div className="relative xl:flex-2 h-40 xl:h-64 xl:w-[30%] overflow-hidden xl:rounded-l-xl xl:rounded-r-none rounded-t-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
           <img className="size-full" src={img} alt={titulo} />
