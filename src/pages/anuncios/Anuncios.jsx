@@ -11,7 +11,7 @@ export default function Anuncios() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      <Route path="/admin" element={<AdminAnuncios />} />
+      <Route path="/adminadminadminadminadminadminadminadminadminadminadminadmin" element={<AdminAnuncios />} />
       <Route path="/" element={<UserAnuncios />} />
     </Routes>
   );
