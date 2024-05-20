@@ -12,17 +12,19 @@ export default function App() {
   return (
     <>
       <Parallax>
-        <header className="text-white text-nowrap translate-y-[20px]">
-          <h1 className="font-bold text-[40px] md:text-[70px]">
-            E. E. S. T. N°5
-          </h1>
-          <hr className="mx-[80px] md:mx-[530px] border-[2px]" />
-          <h2 className="font-semibold text-[40px] md:text-[40px]">
-            Amancio Williams
-          </h2>
-          <h3 className="text-[20px]">Mar del Plata</h3>
+        <header className="text-white text-center">
+          <div className="mx-auto max-w-xl pt-10">
+            <h1 className="font-bold text-3xl md:text-5xl lg:text-6xl mb-1 md:mb-2 lg:mb-3">
+              <span className="text-4xl md:text-6xl lg:text-7xl">E. E. S. T. N°5</span>
+              <hr className="my-1 md:my-2 lg:my-3 mx-auto w-1/2 md:w-2/3 lg:w-1/2 border-2" />
+            </h1>
+            <h2 className="font-semibold text-2xl md:text-3xl lg:text-4xl mt-1 md:mt-2 lg:mt-3">
+              Amancio Williams
+            </h2>
+          </div>
         </header>
-        <main className="flex flex-row justify-center items-center mt-[100px] gap-[50px]">
+
+        <main className="flex flex-wrap justify-center items-center mt-8 sm:mt-10 md:mt-12 lg:mt-16 xl:mt-20 gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20">
           <HomeButton text="Nuestro contacto" img={comunicar} to="./Contacto" />
           <HomeButton text="Feed back" img={anuncio} to="" />
           <HomeButton text="Sobre nosotros" img={equipo} to="" />

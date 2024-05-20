@@ -8,28 +8,30 @@ export default function Contacto() {
     <>
       <Parallax>
         <Nav />
-        <header className="text-white flex flex-col justify-center items-start h-[90%] mx-[70px]">
-          <h1 className="text-[100px] font-bold">Contáctanos</h1>
-          <p className=" text-start text-[25px]  text-wrap">
-            Nos encanta escuchar de ti y estamos aquí para ayudarte en lo que
-            necesites. Puedes contactarnos mediante nuestro formulario de
-            contacto en línea para cualquier pregunta o sugerencia que tengas.
-            Además, síguenos en nuestras redes sociales{" "}
-            <span className="text-sky-500 font-semibold hover:brightness-[2] transition duration-[.2s]">
-              Facebook
-            </span>{" "}
-            e{" "}
-            <span className="text-pink-600 font-semibold hover:brightness-[2] transition duration-[.2s]">
-              Instagram{" "}
-            </span>
-            para mantenerte al día con las últimas noticias, eventos y
-            actividades de nuestra escuela. Y si prefieres hablar en persona, te
-            solicitamos que acuerdes una entrevista por este formulario o por
-            correo electrónico. Esperamos saber pronto de ti y nos agrada
-            conectarnos contigo y únete a nuestra comunidad en línea.
-          </p>
-        </header>
-
+        <header className="text-white flex flex-col justify-center items-start h-[90%] mx-[5%] md:mx-[70px]">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-4 md:mb-8 mt-20 text-center md:text-left m-10">
+            Ponte en contacto con nosotros
+        </h1>
+        <p className="z-10 text-center text-[4vw] md:text-[25px] text-wrap mt-10 relative bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg mx-10">
+          Nos encanta escuchar de ti y estamos aquí para ayudarte en lo que
+          necesites. Puedes contactarnos mediante nuestro formulario de
+          contacto en línea para cualquier pregunta o sugerencia que tengas.
+          Además, síguenos en nuestras redes sociales{" "}
+          <span className="text-sky-500 font-semibold hover:brightness-[2] transition duration-[.2s]">
+            Facebook
+          </span>{" "}
+          e{" "}
+          <span className="text-pink-600 font-semibold hover:brightness-[2] transition duration-[.2s]">
+            Instagram{" "}
+          </span>
+          para mantenerte al día con las últimas noticias, eventos y
+          actividades de nuestra escuela. Y si prefieres hablar en persona, te
+          solicitamos que acuerdes una entrevista por este formulario o por
+          correo electrónico. Esperamos saber pronto de ti y nos agrada
+          conectarnos contigo y únete a nuestra comunidad en línea.
+        </p>
+      </header>
+      </Parallax>
         <section class="sm:flex mx-[10vw] sm:gap-[10vw] sm:justify-center mt-[70px] mb-[50px]">
           <form
             action="https://formsubmit.co/infoT5@eest5mdp.edu.ar"
@@ -112,7 +114,6 @@ export default function Contacto() {
           </div>
         </section>
         <Footer />
-      </Parallax>
     </>
   );
 }
