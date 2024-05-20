@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Toaster, toast } from "sonner";
 
 export default function AdminCard({
@@ -31,7 +32,9 @@ export default function AdminCard({
   };
 
   const handleModificarClick = () => {
-    window.location.href = `/admin/editarAnuncio?id=${id}&titulo=${encodeURIComponent(
+    // adminadminadminadminadminadminadminadminadminadminadminadmin/editarAnuncio
+    //localhost:5173/anuncios/adminadminadminadminadminadminadminadminadminadminadminadmin/editarAnuncio
+    window.location.href = `http://localhost:5173/anuncios/admin/editarAnuncio?id=${id}&titulo=${encodeURIComponent(
       titulo
     )}`;
   };
@@ -106,14 +109,17 @@ export default function AdminCard({
                 >
                   Saber más
                 </button>
-                <button
-                  onClick={handleModificarClick}
+                <Link
+                  // onClick={handleModificarClick}
+                  to={`http://localhost:5173/anuncios/adminadminadminadminadminadminadminadminadminadminadminadmin/editarAnuncio?id=${id}&titulo=${encodeURIComponent(
+                    titulo
+                  )}`}
                   data-ripple-light="true"
                   type="button"
                   className="select-none mt-[10px] ml-[-20px] rounded-lg bg-orange-600 py-[10px] px-[10px] text-center text-nowrap align-middle font-sans text-[14px] font-bold uppercase text-white shadow-md shadow-orange-500/20 transition-all hover:shadow-lg hover:shadow-orange-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                 >
                   Modificar
-                </button>
+                </Link>
                 <button
                   onClick={handleEliminarClick}
                   data-ripple-light="true"

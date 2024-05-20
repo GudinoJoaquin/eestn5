@@ -58,7 +58,7 @@ export default function CrearAnuncio() {
               Mensaje
             </label>
             <textarea
-              class="mt-1 p-2 w-full bg-gray-300 dark:bg-slate-900 dark:text-slate-200 border-none focus:outline-none  rounded-md text-gray-900 resize-none"
+              className="mt-1 p-2 w-full bg-gray-300 dark:bg-slate-900 dark:text-slate-200 border-none focus:outline-none  rounded-md text-gray-900 resize-none"
               rows="3"
               name="mensaje"
               id="bio"
