@@ -19,7 +19,7 @@ export default function Nosotros() {
   return (
     <>
       <Parallax>
-        <Nav />
+        {/* <Nav /> */}
         <header className="text-white flex flex-col justify-center items-center h-[100%] mx-4 md:mx-[70px]">
           <h1 className="text-[40px] md:text-[50px] lg:text-[60px] font-bold">
             Sobre nosotros
@@ -158,7 +158,7 @@ export default function Nosotros() {
           <h2 className="text-red-500 text-3xl md:text-4xl lg:text-5xl font-bold">
             Únete a nosotros
           </h2>
-          <p className="text-sm md:text-base lg:text-lg mx-8 md:mx-32 mt-4 mb-10 leading-relaxed mx-10">
+          <p className="text-sm md:text-base lg:text-lg md:mx-32 mt-4 mb-10 leading-relaxed mx-10">
             Si estás interesado en formar parte de nuestra comunidad educativa o
             deseas obtener más información, ¡no dudes en ponerte en contacto con
             nosotros! Estamos aquí para ayudarte a alcanzar tus metas educativas
@@ -172,7 +172,7 @@ export default function Nosotros() {
           </Link>
         </section>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

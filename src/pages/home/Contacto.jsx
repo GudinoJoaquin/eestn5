@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import Nav from "../../components/Nav";
 import Parallax from "../../components/Parallax";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 
 export default function Contacto() {
   return (
     <>
       <Parallax>
-        <Nav />
+        {/* <Nav /> */}
         <header className="text-white flex flex-col justify-center items-start h-[90%] mx-[5%] md:mx-[70px]">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-4 md:mb-8 mt-20 text-center md:text-left m-10">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-4 md:mb-8 md:mt-20 text-center md:text-left m-10">
             Ponte en contacto con nosotros
         </h1>
         <p className="z-10 text-center text-[4vw] md:text-[25px] text-wrap mt-10 relative bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg mx-10">
@@ -81,13 +82,14 @@ export default function Contacto() {
                   <i class="fa fa-map ml-[-39px] mr-[10px]"></i>
                   Dirección:
                   <br />
-                  <a
-                    href="https://www.google.com/maps/place/Escuela+De+Educación+Secundaria+Técnica+Nº5+'Amancio+Williams'/@-38.0104666,-57.5894172,15z/data=!4m6!3m5!1s0x9584dec66cad85ff:0x2a201849dd878504!8m2!3d-38.011481!4d-57.5806625!16s%2Fg%2F1hf3y76ld?entry=ttu"
+                  <Link
+                    to="https://www.google.com/maps/place/Escuela+De+Educación+Secundaria+Técnica+Nº5+'Amancio+Williams'/@-38.0104666,-57.5894172,15z/data=!4m6!3m5!1s0x9584dec66cad85ff:0x2a201849dd878504!8m2!3d-38.011481!4d-57.5806625!16s%2Fg%2F1hf3y76ld?entry=ttu"
+                    target="_blank"
                     class="sm:text-[1.3vw] hover:text-red-500 underline underline-offset-2"
                   >
                     Av. Juan B. Justo 4287, B7608 Mar del Plata, Provincia de
                     Buenos Aires
-                  </a>
+                  </Link>
                 </h6>
               </div>
               <div class="mt-[20px] mb-[50px]">
@@ -103,17 +105,18 @@ export default function Contacto() {
                   </a>
                 </h6>
               </div>
-              <button
+              <Link
                 class="bg-green-800 text-white rounded-[5px] px-[10px] py-[.5vw] m-[.5vw] hover:bg-green-700 transition duration-[.3s] w-full"
                 type="button"
-                onclick="window.open('https://www.google.com/maps/uv?pb=!1s0x9584dec66cad85ff%3A0x2a201849dd878504!3m1!7e115!4s%2Fmaps%2Fplace%2Feestn5%2F%40-38.0116482%2C-57.5808331%2C3a%2C75y%2C38.81h%2C90t%2Fdata%3D*213m4*211e1*213m2*211sYnnzVpfm0XdvSz50K7sWZg*212e0*214m2*213m1*211s0x9584dec66cad85ff%3A0x2a201849dd878504%3Fsa%3DX%26ved%3D2ahUKEwi-srXVtYGGAxV3kJUCHfIcAq4Qpx96BAhLEAA!5seestn5%20-%20Buscar%20con%20Google!15sCgIgAQ&imagekey=!1e2!2sYnnzVpfm0XdvSz50K7sWZg&hl=es&ved=1t%3A206134&ictx=111', '_blank')"
+                to='https://www.google.com/maps/uv?pb=!1s0x9584dec66cad85ff%3A0x2a201849dd878504!3m1!7e115!4s%2Fmaps%2Fplace%2Feestn5%2F%40-38.0116482%2C-57.5808331%2C3a%2C75y%2C38.81h%2C90t%2Fdata%3D*213m4*211e1*213m2*211sYnnzVpfm0XdvSz50K7sWZg*212e0*214m2*213m1*211s0x9584dec66cad85ff%3A0x2a201849dd878504%3Fsa%3DX%26ved%3D2ahUKEwi-srXVtYGGAxV3kJUCHfIcAq4Qpx96BAhLEAA!5seestn5%20-%20Buscar%20con%20Google!15sCgIgAQ&imagekey=!1e2!2sYnnzVpfm0XdvSz50K7sWZg&hl=es&ved=1t%3A206134&ictx=111'
+                target="_blank"
               >
                 ¡Visítanos Ahora!
-              </button>
+              </Link>
             </div>
           </div>
         </section>
-        <Footer />
+        {/* <Footer /> */}
     </>
   );
 }
