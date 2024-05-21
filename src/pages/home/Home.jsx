@@ -11,6 +11,7 @@ import experto from "../../assets/img/experto.svg";
 export default function App() {
   return (
     <>
+      <body className="bg-black">
       <Parallax>
         <header className="text-white text-center">
           <div class="mx-auto max-w-xl pt-10">
@@ -37,6 +38,7 @@ export default function App() {
         </main>
       </Parallax>
       <Footer />
+      </body>
     </>
   );
 }
