@@ -19,7 +19,7 @@ export default function Nosotros() {
   return (
     <>
       <Parallax>
-        {/* <Nav /> */}
+        <Nav /> 
         <header className="text-white flex flex-col justify-center items-center h-[100%] mx-4 md:mx-[70px]">
           <h1 className="text-[40px] md:text-[50px] lg:text-[60px] font-bold">
             Sobre nosotros
@@ -172,7 +172,7 @@ export default function Nosotros() {
           </Link>
         </section>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

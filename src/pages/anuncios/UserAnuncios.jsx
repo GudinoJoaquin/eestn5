@@ -41,7 +41,7 @@ export default function UserAnuncios() {
 
   return (
     <>
-      {/* <Nav /> */}
+      <Nav /> 
       <div className="dark:bg-slate-900 h-full over">
         <ThemeSwitch />
         {loading ? (
@@ -97,7 +97,7 @@ export default function UserAnuncios() {
           </>
         )}
       </div>
-      {/* <Footer /> */}
+      <Footer /> 
     </>
   );
 }

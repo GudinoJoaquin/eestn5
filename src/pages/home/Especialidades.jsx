@@ -15,7 +15,7 @@ export default function Contacto() {
   return (
     <>
       <Parallax>
-        {/* <Nav /> */}
+         <Nav />
         <header className="text-white flex flex-col justify-center items-center mx-4 md:items-start md:mx-[70px]">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-4 md:mb-8 md:mt-20 text-center md:text-left m-10">
             Nuestras Especialidades
@@ -161,7 +161,7 @@ export default function Contacto() {
         </section>
         )}
       </main>
-      {/* <Footer /> */}
+      <Footer /> 
     </>
   );
 }

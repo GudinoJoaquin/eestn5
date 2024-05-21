@@ -23,10 +23,10 @@ export default function App() {
             </h2>
           </div>
         </header>
-
+        <body className=""></body>
         <main className="flex flex-wrap justify-center items-center mt-8 sm:mt-10 md:mt-12 lg:mt-16 xl:mt-20 gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20">
           <HomeButton text="Nuestro contacto" img={comunicar} to="/contacto" />
-          <HomeButton text="Anuncios" img={anuncio} to="/anuncios" />
+          <HomeButton text="Ver Anuncios" img={anuncio} to="/anuncios" />
           <HomeButton text="Sobre nosotros" img={equipo} to="/nosotros" />
           <HomeButton text="Nuestras especialidades" img={experto} to="/especialidades" />
         </main>
