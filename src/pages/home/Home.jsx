@@ -31,7 +31,7 @@ export default function App() {
           <HomeButton text="Nuestras especialidades" img={experto} to="/especialidades" />
         </main>
       </Parallax>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
