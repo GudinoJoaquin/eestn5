@@ -33,11 +33,7 @@ export default function App() {
           <HomeButton text="Nuestro Contacto" img={comunicar} to="/contacto" />
           <HomeButton text="Ver Anuncios" img={anuncio} to="/anuncios" />
           <HomeButton text="Sobre Nosotros" img={equipo} to="/nosotros" />
-          <HomeButton
-            text="Nuestras Especialidades"
-            img={experto}
-            to="/especialidades"
-          />
+          <HomeButton text="Nuestras Especialidades"img={experto} to="/especialidades"/>
         </main>
       </Parallax>
       <Footer />
