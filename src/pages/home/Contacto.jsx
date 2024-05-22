@@ -125,6 +125,6 @@ export default function Contacto() {
         </div>
       </section>
       <Footer />
-    </>
+    </body>
   );
 }
