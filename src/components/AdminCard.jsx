@@ -57,8 +57,7 @@ export default function AdminCard({
         setTimeout(() => {
           toast.loading("Volviendo al inicio");
           setTimeout(() => {
-            window.location.href =
-              "https://eestn5-rho.vercel.app/anuncios/adminadminadminadminadminadminadminadminadminadminadminadmin";
+            window.location.href = "http://localhost:5173/anuncios/";
           }, 2000);
         }, 1000);
       })
@@ -111,7 +110,7 @@ export default function AdminCard({
                 </button>
                 <Link
                   // onClick={handleModificarClick}
-                  to={`http://localhost:5173/anuncios/adminadminadminadminadminadminadminadminadminadminadminadmin/editarAnuncio?id=${id}&titulo=${encodeURIComponent(
+                  to={`http://localhost:5173/anuncios/editarAnuncio?id=${id}&titulo=${encodeURIComponent(
                     titulo
                   )}`}
                   data-ripple-light="true"
