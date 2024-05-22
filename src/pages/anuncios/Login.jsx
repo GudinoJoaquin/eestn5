@@ -17,7 +17,7 @@ export default function Login() {
     document.cookie = `UserType=${userType}; Max-Age=1`;
     
     // Redirigir o hacer cualquier otra acción necesaria después de enviar el formulario
-    window.location.href = 'http://localhost:5173/anuncios'
+    window.location.href = 'https://eestn5-rho.vercel.app/anuncios'
     // Aquí puedes redirigir a otra página, etc.
   };
 
