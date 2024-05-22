@@ -10,18 +10,18 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  text-align: center;
+  background-attachment: fixed; /* Añade esta línea para que los elementos se posicionen uno debajo del otro */
+  text-align: center; /* Añade esta línea para centrar el texto */
   user-select: none;
 }
 
-@media screen and (max-width: 768px) {
-  .parallax-completo {
-    background-image: radial-gradient(
+@media screen and (max-width: 768px){
+.parallax-completo {
+  background-image: radial-gradient(
       circle,
       rgba(0, 0, 0, 0.664) 100%,
       rgba(255, 255, 255, 0) 100%
     ),
     url("../img/idi2_OLD.jpeg");
-    background-attachment: scroll; /* Cambia a scroll en dispositivos móviles */
-  }
+}
 }
