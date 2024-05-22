@@ -21,7 +21,7 @@ export default function Contacto() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-4 md:mb-8 md:mt-20 text-center md:text-left m-10">
             Nuestras Especialidades
           </h1>
-          <p className="text-sm md:text-lg lg:text-xl bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg p-4 md:p-8 rounded-lg mt-10 text-center md:text-left m-10">
+          <p className="text-sm md:text-lg lg:text-xl bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg p-1 md:p-5 rounded-lg mt-10 text-center md:text-left m-10">
             En nuestra institución, los estudiantes tienen la oportunidad de
             especializarse en tres áreas fundamentales para la vida moderna:
             informática, electrónica y construcciones. La especialización en
@@ -38,7 +38,7 @@ export default function Contacto() {
           </p>
         </header>
       </Parallax>
-      <main className="mb-[50px">
+      <main className="mt-[50px] mb-[50px]">
         <div className="flex flex-wrap justify-center items-center gap-2 md:gap-8 mt-10">
           <button
             onClick={() => showContent("informatica")}
