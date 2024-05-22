@@ -3,6 +3,8 @@ import AdminCard from "../../components/AdminCard";
 import ThemeSwitch from "../../components/ThemeSwitch";
 import NotFound from "../NotFound";
 import { Link } from "react-router-dom";
+import Nav from "../../components/Nav";
+import Footer from "../../components/Footer";
 import Loader from "react-js-loader";
 
 export default function AdminAnuncios() {

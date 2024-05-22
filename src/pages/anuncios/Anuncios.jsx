@@ -5,33 +5,35 @@ import UserAnuncios from "./UserAnuncios";
 import AdminAnuncios from "./AdminAnuncios";
 import CrearAnuncio from "./CrearAnuncio";
 import ModificarAnuncio from "./ModificarAnuncios";
-import NotFound from "../NotFound";
 import Login from "./Login";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 
 export default function Anuncios() {
   const [userType, setUserType] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Obtener el valor de la cookie "UserType"
     const userTypeCookie = document.cookie
       .split("; ")
       .find((row) => row.startsWith("UserType="));
 
-    // Si la cookie existe, establecer el estado userType
     if (userTypeCookie) {
       const userTypeValue = userTypeCookie.split("=")[1];
       setUserType(userTypeValue);
     } else {
-      // Si no hay cookie, redirigir a la página de inicio de sesión
-      // Esto es opcional y depende de tu flujo de la aplicación
       setUserType("user"); // O cualquier valor predeterminado que desees
     }
+    setLoading(false); // Marcar la carga como completa
   }, []);
+
+  if (loading) {
+    return <div>Loading...</div>; // O cualquier componente de carga que desees
+  }
 
   return (
     <>
+      <Nav />
       <Routes>
         <Route
           path="/crearAnuncio"

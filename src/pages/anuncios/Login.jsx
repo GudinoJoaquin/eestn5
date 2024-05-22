@@ -1,3 +1,4 @@
+// Login.jsx
 import React, { useState } from "react";
 import Input from "../../components/Input";
 
@@ -6,19 +7,16 @@ export default function Login() {
     event.preventDefault();
     document.cookie = "UserType=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
-    // Obtener los valores de usuario y contraseña del formulario
     const user = event.target.elements.user.value;
     const pass = event.target.elements.pass.value;
 
-    // Comprobar si el usuario es admin o user (simulado aquí con una condición)
     const userType = user === "admin" && pass === 'admin' ? "admin" : "user";
 
-    // Crear la cookie
-    document.cookie = `UserType=${userType}; Max-Age=1`;
-    
-    // Redirigir o hacer cualquier otra acción necesaria después de enviar el formulario
-    window.location.href = 'https://eestn5-rho.vercel.app/anuncios'
-    // Aquí puedes redirigir a otra página, etc.
+    // Crear la cookie con una duración adecuada
+    document.cookie = `UserType=${userType}; path=/; max-age=${60 * 60};`;
+
+    // Redirigir a la página de anuncios
+    window.location.href = 'http://localhost:5173/anuncios';
   };
 
   return (
