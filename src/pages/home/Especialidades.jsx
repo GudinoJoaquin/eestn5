@@ -14,7 +14,7 @@ export default function Contacto() {
 
   return (
     <>
-      <body className="bg-white">
+      <body className="bg-white dark:bg-[#2D2D2D] dark:text-white">
       <Parallax>
          <Nav />
         <header className="text-white flex flex-col justify-center items-center mx-4 md:items-start md:mx-[70px]">
@@ -42,30 +42,30 @@ export default function Contacto() {
         <div className="flex flex-wrap justify-center items-center gap-2 md:gap-8 mt-10">
           <button
             onClick={() => showContent("informatica")}
-            className={`border flex flex-col justify-center items-center bg-white text-gray-800 py-2 px-4 md:py-3 md:px-6 rounded-lg transform transition-all duration-300 ${
+            className={`border flex flex-col justify-center items-center bg-white dark:bg-[#2D2D2D] text-gray-800 py-2 px-4 md:py-3 md:px-6 rounded-lg transform transition-all duration-300 ${
               visibleSection === "informatica"
-                ? "border border-red-500 bg-red-500 text-red-500 scale-105 transition-transform duration-300"
-                : "hover:bg-red-100 hover:text-red-700"
+                ? "border border-red-500 bg-red-500 text-red-500 scale-105 transition-transform duration-300 dark:text-white"
+                : "hover:bg-red-100 hover:text-red-700 dark:text-gray-400 border-gray-400"
             }`}
           >
             <p className="text-sm md:text-lg">Informática</p>
           </button>
           <button
             onClick={() => showContent("construcciones")}
-            className={`border flex flex-col justify-center items-center bg-white text-gray-800 py-2 px-4 md:py-3 md:px-6 rounded-lg transform transition-all duration-300 ${
+            className={`border flex flex-col justify-center items-center bg-white dark:bg-[#2D2D2D] text-gray-800 py-2 px-4 md:py-3 md:px-6 rounded-lg transform transition-all duration-300 ${
               visibleSection === "construcciones"
-                ? "border border-red-500 bg-red-500 text-red-500 scale-105 transition-transform duration-300"
-                : "hover:bg-red-100 hover:text-red-500"
+                ? "border border-red-500 bg-red-500 text-red-500 scale-105 transition-transform duration-300 dark:text-white"
+                : "hover:bg-red-100 hover:text-red-500 dark:text-gray-400 border-gray-400"
             }`}
           >
             <p className="text-sm md:text-lg">Construcciones</p>
           </button>
           <button
             onClick={() => showContent("electronica")}
-            className={`border flex flex-col justify-center items-center bg-white text-gray-800 py-2 px-4 md:py-3 md:px-6 rounded-lg transform transition-all duration-300 ${
+            className={`border flex flex-col justify-center items-center bg-white dark:bg-[#2D2D2D] text-gray-800 py-2 px-4 md:py-3 md:px-6 rounded-lg transform transition-all duration-300 ${
               visibleSection === "electronica"
-                ? "border border-red-500 bg-red-500 text-red-500 scale-105 transition-transform duration-300"
-                : "hover:bg-red-100 hover:text-red-700"
+                ? "border border-red-500 bg-red-500 text-red-500 scale-105 transition-transform duration-300 dark:text-white"
+                : "hover:bg-red-100 hover:text-red-700 dark:text-gray-400 border-gray-400"
             }`}
           >
             <p className="text-sm md:text-lg">Electrónica</p>

@@ -4,10 +4,15 @@ import Parallax from "../../components/Parallax";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import imagen from "../../assets/img/idi2_OLD.jpeg";
-import l1 from "../../assets/img/l1b.svg";
-import l2 from "../../assets/img/l2b.svg";
-import l3 from "../../assets/img/l3b.svg";
-import l4 from "../../assets/img/l4b.svg";
+
+import l1 from "../../assets/img/l1.svg";
+import l2 from "../../assets/img/l2.svg";
+import l3 from "../../assets/img/l3.svg";
+import l4 from "../../assets/img/l4.svg";
+import l1b from "../../assets/img/l1b.svg";
+import l2b from "../../assets/img/l2b.svg";
+import l3b from "../../assets/img/l3b.svg";
+import l4b from "../../assets/img/l4b.svg";
 
 export default function Nosotros() {
   const contentRef = useRef(null);
@@ -16,19 +21,23 @@ export default function Nosotros() {
     contentRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  const savedTheme = localStorage.getItem("theme");
+
   return (
-    <>
+    <body className="bg-white dark:bg-[#2D2D2D] dark:text-white">
       <Parallax>
-        <Nav /> 
+        <Nav />
         <header className="text-white flex flex-col justify-center items-center h-[100%] mx-4 md:mx-[70px]">
           <h1 className="text-[40px] md:text-[50px] lg:text-[60px] font-bold">
-           +38 Años Enseñando
+            +38 Años Enseñando
           </h1>
           <p className="text-start text-[16px] md:text-[20px] lg:text-[24px] text-wrap mb-5 ">
-           Desde 1986 brindando una educacion de calidad
+            Desde 1986 brindando una educacion de calidad
           </p>
           <p className="flex flex-wrap gap-[10px] text-[12px] md:text-[16px]">
-            Nuestra escuela se fundo en Mar Del Plata en 1986 conocida por el nombre de <br></br> ENET N°3, que posterior mente fue renombrada EEST N°5 en 1994
+            Nuestra escuela se fundo en Mar Del Plata en 1986 conocida por el
+            nombre de <br></br> ENET N°3, que posterior mente fue renombrada
+            EEST N°5 en 1994
           </p>
           <div className="flex items-center justify-center w-16 h-16 mt-20">
             <svg
@@ -52,7 +61,7 @@ export default function Nosotros() {
       <main ref={contentRef} className="mt-20 md:mt-24">
         <section className="flex flex-col md:flex-row md:justify-around items-center">
           <div className="flex flex-col flex-1 justify-center items-center text-center px-4 md:px-8">
-            <h2 className="text-red-900 font-bold text-3xl md:text-4xl lg:text-5xl">
+            <h2 className="text-red-700 dark:text-red-500 font-bold text-3xl md:text-4xl lg:text-5xl">
               Nosotros
             </h2>
             <p className="mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-center mx-10">
@@ -77,7 +86,7 @@ export default function Nosotros() {
             </p>
           </div>
           <div className="hidden md:flex flex-1 justify-center items-center">
-          <img
+            <img
               src={imagen}
               alt=""
               className="w-9/12 h-auto rounded-2xl hover:scale-105 transition duration-300"
@@ -88,18 +97,18 @@ export default function Nosotros() {
         <section className="flex flex-col md:flex-row mt-20 md:mt-24 items-center">
           <div className="hidden md:flex flex-col items-center gap-6 mt-10 ml-4 md:ml-12 md:w-1/4">
             <img
-              src={l1}
+              src={l1b}
               alt=""
               className="w-24 md:w-28 lg:w-32 hover:scale-105 transition duration-300"
             />
             <img
-              src={l2}
+              src={l2b}
               alt=""
               className="w-24 md:w-28 lg:w-32 hover:scale-105 transition duration-300"
             />
           </div>
           <div className="flex-1 px-4 md:px-8 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-900 text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-700 dark:text-green-500 text-center">
               Nuestros Objetivos
             </h2>
             <p className="mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-center mx-10">
@@ -116,12 +125,12 @@ export default function Nosotros() {
           </div>
           <div className="hidden md:flex flex-col items-center gap-6 mt-10 mr-4 md:mr-12 md:w-1/4">
             <img
-              src={l3}
+              src={l3b}
               alt=""
               className="w-24 md:w-28 lg:w-32 hover:scale-105 transition duration-300"
             />
             <img
-              src={l4}
+              src={l4b}
               alt=""
               className="w-24 md:w-28 lg:w-32 hover:scale-105 transition duration-300"
             />
@@ -129,7 +138,7 @@ export default function Nosotros() {
         </section>
 
         <section className="mt-20 mb-10 text-center">
-          <h2 className="text-red-900 text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h2 className="text-red-700 dark:text-red-500 text-3xl md:text-4xl lg:text-5xl font-bold">
             Únete a nosotros
           </h2>
           <p className="text-sm md:text-base lg:text-lg md:mx-32 mt-4 mb-10 leading-relaxed mx-10">
@@ -140,12 +149,13 @@ export default function Nosotros() {
           </p>
           <Link
             to="../contacto"
-            className="bg-red-900 text-md md:text-lg lg:text-xl font-semibold text-white py-2 px-6 md:px-8 rounded-md shadow-md transition duration-300 hover:bg-red-950">
+            className="bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 text-md md:text-lg lg:text-xl font-semibold text-white py-2 px-6 md:px-8 rounded-md shadow-md transition duration-300 hover:bg-red-950"
+          >
             Contáctanos
           </Link>
         </section>
       </main>
       <Footer />
-    </>
+    </body>
   );
 }

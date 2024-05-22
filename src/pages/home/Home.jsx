@@ -8,7 +8,7 @@ import anuncio from "../../assets/img/anuncio-publicitario (1).svg";
 import equipo from "../../assets/img/equipo.svg";
 import experto from "../../assets/img/experto.svg";
 
-export default function App() {
+export default function Home() {
   return (
     <>
       <body className="bg-black">

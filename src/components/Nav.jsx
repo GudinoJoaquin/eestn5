@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "../assets/img/logo.svg";
+import ThemeSwitch from "./ThemeSwitch";
 import { Link } from "react-router-dom";
 
 export default function Nav() {
@@ -27,7 +28,7 @@ export default function Nav() {
   }, []);
 
   return (
-    <header>
+    <header className="bg-slate-100 dark:bg-[#1D1D1D] h-[82px] fixed md:w-[100vw] z-50">
       <nav
         ref={navRef}
         id="navbar"
@@ -43,10 +44,7 @@ export default function Nav() {
           onClick={toggleNav}
         >
           <img src={logo} alt="Logo" className="w-20 h-auto bg-transparent" />
-          <p className="text-white text-lg font-semibold bg-transparent">
-            <span className="text-green-500">M</span>
-            <span className="text-red-500">enú</span>
-          </p>
+          <p className="text-white text-lg font-semibold bg-transparent"></p>
         </div>
         <div
           id="options"
@@ -86,6 +84,9 @@ export default function Nav() {
           </Link>
         </div>
       </nav>
+      <div className="flex justify-end relative top-[7.2px]">
+        <ThemeSwitch />
+      </div>
     </header>
   );
 }

@@ -43,7 +43,7 @@ export default function UserAnuncios() {
     <>
       <Nav /> 
       <div className="dark:bg-slate-900 h-full over">
-        <ThemeSwitch />
+        {/* <ThemeSwitch /> */}
         {loading ? (
           <div className="flex justify-center items-center h-screen">
             <Loader

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function Contacto() {
   return (
-    <>
+    <body className="bg-white dark:bg-[#2D2D2D] dark:text-white">
       <Parallax>
          <Nav />
         <header className="text-white flex flex-col justify-center items-start h-[90%] mx-[5%] md:mx-[70px]">
@@ -44,21 +44,21 @@ export default function Contacto() {
               <hr class="border-[1.5px] border-red-500 mr-[600px] mt-[3px] w-[40px]" />
             </h4>
             <input
-              class="border-solid border border-gray-300 focus:ring-[3px] focus:ring-red-500 focus:ring-opacity-30 focus:outline-none rounded-[5px] p-[.5vw] m-[.5vw] placeholder:italic transition duration-[.3s]"
+              class=" dark:bg-[#383838] bg-[#e6e6e6] focus:ring-[3px] focus:ring-red-500 focus:ring-opacity-30 focus:outline-none rounded-[5px] p-[.5vw] m-[.5vw] placeholder:italic transition duration-[.3s]"
               type="text"
               placeholder="Nombre"
               name="Nombre"
               required
             />
             <input
-              class="border-solid border border-gray-300 focus:ring-[3px] focus:ring-red-500 focus:ring-opacity-30 focus:outline-none rounded-[5px] p-[.5vw] m-[.5vw] placeholder:italic transition duration-[.3s]"
+              class=" dark:bg-[#383838] bg-[#e6e6e6] focus:ring-[3px] focus:ring-red-500 focus:ring-opacity-30 focus:outline-none rounded-[5px] p-[.5vw] m-[.5vw] placeholder:italic transition duration-[.3s]"
               type="email"
               placeholder="Email"
               name="Email"
               required
             />
             <textarea
-              class="border-solid border border-gray-300 focus:ring-[3px] focus:ring-red-500 focus:ring-opacity-30 focus:outline-none rounded-[5px] p-[.5vw] m-[.5vw] placeholder:italic transition duration-[.3s] resize-none"
+              class=" dark:bg-[#383838] bg-[#e6e6e6] focus:ring-[3px] focus:ring-red-500 focus:ring-opacity-30 focus:outline-none rounded-[5px] p-[.5vw] m-[.5vw] placeholder:italic transition duration-[.3s] resize-none"
               rows="17"
               name="Texto"
               required
@@ -106,7 +106,7 @@ export default function Contacto() {
                 </h6>
               </div>
               <Link
-                class="bg-green-800 text-white rounded-[5px] px-[10px] py-[.5vw] m-[.5vw] hover:bg-green-700 transition duration-[.3s] w-full"
+                class="border-2 flex justify-center items-center border-green-700 text-green-700 hover:text-white dark:text-white font-semibold text-[20px] rounded-[5px] px-[10px] py-[1vw] m-[.5vw] hover:bg-green-700 transition duration-[.3s] w-full"
                 type="button"
                 to='https://www.google.com/maps/uv?pb=!1s0x9584dec66cad85ff%3A0x2a201849dd878504!3m1!7e115!4s%2Fmaps%2Fplace%2Feestn5%2F%40-38.0116482%2C-57.5808331%2C3a%2C75y%2C38.81h%2C90t%2Fdata%3D*213m4*211e1*213m2*211sYnnzVpfm0XdvSz50K7sWZg*212e0*214m2*213m1*211s0x9584dec66cad85ff%3A0x2a201849dd878504%3Fsa%3DX%26ved%3D2ahUKEwi-srXVtYGGAxV3kJUCHfIcAq4Qpx96BAhLEAA!5seestn5%20-%20Buscar%20con%20Google!15sCgIgAQ&imagekey=!1e2!2sYnnzVpfm0XdvSz50K7sWZg&hl=es&ved=1t%3A206134&ictx=111'
                 target="_blank"
@@ -117,6 +117,6 @@ export default function Contacto() {
           </div>
         </section>
         <Footer /> 
-    </>
+    </body>
   );
 }
