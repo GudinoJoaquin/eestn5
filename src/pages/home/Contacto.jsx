@@ -8,7 +8,7 @@ export default function Contacto() {
   return (
     <>
       <Parallax>
-        {/* <Nav /> */}
+         <Nav />
         <header className="text-white flex flex-col justify-center items-start h-[90%] mx-[5%] md:mx-[70px]">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-4 md:mb-8 md:mt-20 text-center md:text-left m-10">
             Ponte en contacto con nosotros
@@ -116,7 +116,7 @@ export default function Contacto() {
             </div>
           </div>
         </section>
-        {/* <Footer /> */}
+        <Footer /> 
     </>
   );
 }

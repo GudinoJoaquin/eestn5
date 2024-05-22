@@ -13,7 +13,6 @@ import Footer from "./components/Footer.jsx";
 export default function App() {
   return (
     <Router>
-      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/notfound" element={<NotFound />} />
@@ -22,7 +21,6 @@ export default function App() {
         <Route path="/anuncios/*" element={<Anuncios />} />
         <Route path="/especialidades" element={<Especialidades />} />
       </Routes>
-      <Footer />
     </Router>
   );
 }
