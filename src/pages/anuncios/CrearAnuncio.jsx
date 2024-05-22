@@ -16,7 +16,7 @@ export default function CrearAnuncio() {
       <header className="flex justify-end items-center gap-[50px] md:mt-[2px] mt-[20px] ml-[10px]">
         <Link
           className="hover:text-emerald-600 hover:scale-[1.2] font-semibold text-[20px] transition duration-[.3s] dark:text-white"
-          to="/anuncios/adminadminadminadminadminadminadminadminadminadminadminadmin"
+          to="/anuncios/"
         >
           <p className="hover:text-emerald-600 transition duration-[.3s]">
             Inicio

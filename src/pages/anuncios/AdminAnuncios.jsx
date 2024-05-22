@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AdminCard from "../../components/AdminCard";
 import ThemeSwitch from "../../components/ThemeSwitch";
-import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
+import NotFound from "../NotFound";
 import { Link } from "react-router-dom";
 import Loader from "react-js-loader";
 
@@ -11,11 +10,6 @@ export default function AdminAnuncios() {
   const [loading, setLoading] = useState(true); // Estado para manejar el loading
   const [currentPage, setCurrentPage] = useState(1);
   const anunciosPerPage = 5;
-
-  useEffect(() => {
-    // Obtener el valor de la cookie "userType"
-    console.log(document.cookie);
-  }, []);
 
   useEffect(() => {
     const url = "https://server-xi-lemon.vercel.app/anuncios";
@@ -32,8 +26,10 @@ export default function AdminAnuncios() {
       });
   }, []);
 
-  const handleNavigation = (path) => {
-    window.location.href = path;
+  const handleLogout = () => {
+    document.cookie =
+      "UserType=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.href = "/anuncios";
   };
 
   // Calcular el índice del último anuncio de la página actual
@@ -60,15 +56,15 @@ export default function AdminAnuncios() {
           >
             Crear anuncio
           </Link>
-          <Link
+          {/* <button
             className="hover:text-red-500 hover:scale-110 font-semibold text-[20px] transition duration-[.3s]"
-            to="https://server-xi-lemon.vercel.app/logoff"
+            onClick={handleLogout}
           >
             Salir
-          </Link>
+          </button> */}
           <ThemeSwitch />
         </header>
-        {loading ? ( // Renderizar el loader si loading es true
+        {loading ? (
           <div className="flex justify-center items-center h-screen">
             <Loader
               type="spinner-default"
@@ -106,7 +102,6 @@ export default function AdminAnuncios() {
                 adjunto={anuncio.contenido_adjunto}
               />
             ))}
-            {/* Botones de paginación */}
             <div className="flex justify-center items-center gap-2">
               {Array.from(
                 { length: Math.ceil(anuncios.length / anunciosPerPage) },
