@@ -32,7 +32,6 @@ export default function Anuncios() {
 
   return (
     <>
-      <Nav />
       <Routes>
         <Route
           path="/crearAnuncio"
