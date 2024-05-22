@@ -16,7 +16,7 @@ export default function Login() {
     document.cookie = `UserType=${userType}; path=/; max-age=${60 * 60};`;
 
     // Redirigir a la página de anuncios
-    window.location.href = 'http://localhost:5173/anuncios';
+    window.location.href = 'http://eestn5-rho.vercel.app/anuncios';
   };
 
   return (
