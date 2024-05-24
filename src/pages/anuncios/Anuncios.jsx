@@ -10,21 +10,17 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 
 export default function Anuncios() {
-  const [userType, setUserType] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [userType, setUserType] = useState('user');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const userTypeCookie = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("UserType="));
-
-    if (userTypeCookie) {
-      const userTypeValue = userTypeCookie.split("=")[1];
-      setUserType(userTypeValue);
-    } else {
-      setUserType("user"); // O cualquier valor predeterminado que desees
+    const data = sessionStorage.getItem('user')
+    data ? setLoading(false) : setLoading(true)
+    const [user, pass] = JSON.parse(data)
+    if(user === 'admin' && pass === 'admin'){
+      setUserType('admin')
     }
-    setLoading(false); // Marcar la carga como completa
+    
   }, []);
 
   if (loading) {
@@ -33,7 +29,6 @@ export default function Anuncios() {
 
   return (
     <>
-      <Nav />
       <Routes>
         <Route
           path="/crearAnuncio"
@@ -49,7 +44,6 @@ export default function Anuncios() {
           element={userType === "admin" ? <AdminAnuncios /> : <UserAnuncios />}
         />
       </Routes>
-      <Footer />
     </>
   );
 }

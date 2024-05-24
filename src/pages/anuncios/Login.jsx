@@ -5,18 +5,16 @@ import Input from "../../components/Input";
 export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
-    document.cookie = "UserType=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
     const user = event.target.elements.user.value;
     const pass = event.target.elements.pass.value;
+    const type = JSON.stringify([user, pass]);
 
-    const userType = user === "admin" && pass === 'admin' ? "admin" : "user";
+    sessionStorage.setItem("user", type);
 
-    // Crear la cookie con una duración adecuada
-    document.cookie = `UserType=${userType}; path=/; max-age=${60 * 60};`;
+    console.log(sessionStorage.getItem("user"));
 
-    // Redirigir a la página de anuncios
-    window.location.href = 'http://eestn5-rho.vercel.app/anuncios';
+    window.location.href = 'http://localhost:5173/anuncios'
   };
 
   return (

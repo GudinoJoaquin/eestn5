@@ -41,7 +41,7 @@ export default function UserAnuncios() {
 
   return (
     <>
-      <Nav /> 
+      <Nav />
       <div className="dark:bg-slate-900 h-full over">
         {/* <ThemeSwitch /> */}
         {loading ? (
@@ -61,7 +61,7 @@ export default function UserAnuncios() {
                 { length: Math.ceil(anuncios.length / adsPerPage) },
                 (_, i) => (
                   <button
-                    className="dark:text-slate-200 dark:hover:bg-blue-900 font-semibold underline underline-offset-2 p-[4px] my-2 rounded-sm hover:scale-[1.2] hover:bg-red-100 transition duration-[.3s]"
+                    className="dark:text-slate-200 dark:hover:bg-blue-900 font-semibold underline underline-offset-2 p-[4px] my-2 mt-[100px] rounded-sm hover:scale-[1.2] hover:bg-red-100 transition duration-[.3s]"
                     key={i}
                     onClick={() => paginate(i + 1)}
                   >
@@ -97,7 +97,7 @@ export default function UserAnuncios() {
           </>
         )}
       </div>
-      <Footer /> 
+      <Footer />
     </>
   );
 }

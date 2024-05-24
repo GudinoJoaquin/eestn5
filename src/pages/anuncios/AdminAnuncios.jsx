@@ -43,7 +43,7 @@ export default function AdminAnuncios() {
 
   return (
     <>
-       <Nav />
+      <Nav />
       <div className="bg-white dark:bg-slate-900 ">
         <header className="flex justify-end items-center gap-[30px] md:translate-y-[2px] translate-y-[20px] ml-[10px] dark:text-slate-200">
           <Link
@@ -121,7 +121,7 @@ export default function AdminAnuncios() {
           </>
         )}
       </div>
-      <Footer /> 
+      <Footer />
     </>
   );
 }

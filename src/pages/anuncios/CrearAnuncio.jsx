@@ -4,12 +4,6 @@ import ThemeSwitch from "../../components/ThemeSwitch";
 import { Link } from "react-router-dom";
 
 export default function CrearAnuncio() {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
-
-  const handleNavigation = (path) => {
-    setCurrentPath(path);
-    window.location.href = path;
-  };
 
   return (
     <div className="bg-white dark:bg-slate-900 mt-[-2px] h-[100vh]">

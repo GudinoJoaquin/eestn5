@@ -28,7 +28,9 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className="bg-slate-100 dark:bg-[#1D1D1D] h-[82px] fixed md:w-[100vw] z-50">
+    <header 
+    className="bg-slate-100 dark:bg-[#1D1D1D] h-[82px] fixed md:w-[100vw] z-50"
+    >
       <nav
         ref={navRef}
         id="navbar"
