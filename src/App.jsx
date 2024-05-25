@@ -9,6 +9,7 @@ import AdminAnuncios from "./pages/anuncios/AdminAnuncios.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Nav from "./components/Nav.jsx";
 import Footer from "./components/Footer.jsx";
+import CrearAnuncio from "./pages/anuncios/CrearAnuncio.jsx";
 
 export default function App() {
   return (

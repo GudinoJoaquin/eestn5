@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AdminCard from "../../components/AdminCard";
 import ThemeSwitch from "../../components/ThemeSwitch";
-import NotFound from "../NotFound";
 import { Link } from "react-router-dom";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
@@ -14,25 +13,22 @@ export default function AdminAnuncios() {
   const anunciosPerPage = 5;
 
   useEffect(() => {
-    const url = "https://server-xi-lemon.vercel.app/anuncios";
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
+    const fetchData = async () => {
+      const url = "https://server-xi-lemon.vercel.app/anuncios";
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
         setAnuncios(data);
-        setLoading(false); // Una vez que los datos se cargan, establecemos loading en false
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false); // Si hay un error, también establecemos loading en false
-      });
-  }, []);
+        console.log(data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+        setLoading(false);
+      }
+    };
 
-  const handleLogout = () => {
-    document.cookie =
-      "UserType=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    window.location.href = "/anuncios";
-  };
+    fetchData();
+  }, []);
 
   // Calcular el índice del último anuncio de la página actual
   const indexOfLastAd = currentPage * anunciosPerPage;
@@ -45,7 +41,7 @@ export default function AdminAnuncios() {
     <>
       <Nav />
       <div className="bg-white dark:bg-slate-900 ">
-        <header className="flex justify-end items-center gap-[30px] md:translate-y-[2px] translate-y-[20px] ml-[10px] dark:text-slate-200">
+        <header className="flex justify-center items-center gap-[30px] md:translate-y-[2px] translate-y-[20px] ml-[10px] dark:text-slate-200">
           <Link
             className="text-emerald-600 scale-[1.2] font-bold text-[20px] transition duration-[.3s]"
             to=""
@@ -58,13 +54,6 @@ export default function AdminAnuncios() {
           >
             Crear anuncio
           </Link>
-          {/* <button
-            className="hover:text-red-500 hover:scale-110 font-semibold text-[20px] transition duration-[.3s]"
-            onClick={handleLogout}
-          >
-            Salir
-          </button> */}
-          <ThemeSwitch />
         </header>
         {loading ? (
           <div className="flex justify-center items-center h-screen">

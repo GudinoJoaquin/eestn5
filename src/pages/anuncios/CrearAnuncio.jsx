@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 export default function CrearAnuncio() {
 
+  const [currentPath, setCurrentPath] = useState(window.location.search)
+
   return (
     <div className="bg-white dark:bg-slate-900 mt-[-2px] h-[100vh]">
       <header className="flex justify-end items-center gap-[50px] md:mt-[2px] mt-[20px] ml-[10px]">
@@ -21,12 +23,6 @@ export default function CrearAnuncio() {
           to=""
         >
           Crear anuncio
-        </Link>
-        <Link
-          className="hover:text-red-600 hover:scale-110 font-semibold text-[20px] transition duration-[.3s] dark:text-white"
-          to="https://server-xi-lemon.vercel.app/logoff"
-        >
-          <p className="hover:text-red-600 transition duration-[.3s]">Salir</p>
         </Link>
         <ThemeSwitch />
       </header>

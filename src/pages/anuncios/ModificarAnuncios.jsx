@@ -6,17 +6,11 @@ import Loader from "react-js-loader";
 
 export default function ModificarAnuncio() {
   const urlParams = new URLSearchParams(window.location.search);
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const id = urlParams.get("id") || "ID del anuncio";
   const titulo = urlParams.get("titulo") || "Titulo del Anuncio";
 
   const [anuncio, setAnuncio] = useState(null);
-  const [loading, setLoading] = useState(true); // Estado para manejar el loading
-
-  const handleNavigation = (path) => {
-    setCurrentPath(path);
-    window.location.href = path;
-  };
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,21 +53,15 @@ export default function ModificarAnuncio() {
       <header className="flex justify-end items-center gap-[30px] md:translate-y-[2px] translate-y-[20px] ml-[10px] dark:text-slate-200">
         <Link
           className="hover:text-emerald-600 scale-[1.2] font-semibold text-[20px] transition duration-[.3s]"
-          to=""
+          to="../"
         >
           Inicio
         </Link>
         <Link
           className="hover:text-orange-600 scale-110 font-semibold text-[20px] transition duration-[.3s]"
-          to="./crearAnuncio"
+          to="../crearAnuncio"
         >
           Crear anuncio
-        </Link>
-        <Link
-          className="hover:text-red-500 hover:scale-110 font-semibold text-[20px] transition duration-[.3s]"
-          to="https://server-xi-lemon.vercel.app/logoff"
-        >
-          Salir
         </Link>
         <ThemeSwitch />
       </header>
