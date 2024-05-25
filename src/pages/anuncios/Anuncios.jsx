@@ -10,34 +10,19 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 
 export default function Anuncios() {
-  const [userType, setUserType] = useState('user');
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const data = sessionStorage.getItem('user')
-    data ? setLoading(false) : setLoading(true)
-    const [user, pass] = JSON.parse(data)
-    if(user === 'admin' && pass === 'admin'){
-      setUserType('admin')
-    }
-    
-  }, []);
 
   if (loading) {
     return <div>Loading...</div>; // O cualquier componente de carga que desees
   }
 
+  const userType = "admin";
+
   return (
     <>
       <Routes>
-        <Route
-          path="/crearAnuncio"
-          element={userType === "admin" ? <CrearAnuncio /> : <Login />}
-        />
-        <Route
-          path="/editarAnuncio"
-          element={userType === "admin" ? <ModificarAnuncio /> : <Login />}
-        />
+        <Route path="/crearAnuncio" element={<CrearAnuncio />} />
+        <Route path="/editarAnuncio" element={<ModificarAnuncio />} />
         <Route path="/login" element={<Login />} />
         <Route
           path="/"

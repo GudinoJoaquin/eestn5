@@ -28,9 +28,7 @@ export default function Nav() {
   }, []);
 
   return (
-    <header 
-    className="bg-slate-100 dark:bg-[#1D1D1D] h-[82px] fixed md:w-[100vw] z-50"
-    >
+    <header className="">
       <nav
         ref={navRef}
         id="navbar"
@@ -84,11 +82,11 @@ export default function Nav() {
           >
             Contacto
           </Link>
+          <div className="flex justify-center items-center relative left-[10px]">
+            <ThemeSwitch />
+          </div>
         </div>
       </nav>
-      <div className="flex justify-end relative top-[7.2px]">
-        <ThemeSwitch />
-      </div>
     </header>
   );
 }

@@ -12,18 +12,21 @@ export default function UserAnuncios() {
   const adsPerPage = 5;
 
   useEffect(() => {
-    const url = "https://server-xi-lemon.vercel.app/anuncios";
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
+    const fetchData = async () => {
+      const url = "https://server-xi-lemon.vercel.app/anuncios";
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
         setAnuncios(data);
-        setLoading(false); // Una vez que los datos se cargan, establecemos loading en false
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false); // Si hay un error, también establecemos loading en false
-      });
+        console.log(data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
   // Calcular el índice del último anuncio de la página actual
