@@ -5,6 +5,8 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import imagen from "../../assets/img/idi2_OLD.jpeg";
 
+import InScroll from "../../logic/AnimInScroll";
+
 import l1 from "../../assets/img/l1.svg";
 import l2 from "../../assets/img/l2.svg";
 import l3 from "../../assets/img/l3.svg";
@@ -28,26 +30,27 @@ export default function Nosotros() {
       <Parallax>
         <Nav />
         <header className="text-white flex flex-col justify-center items-center h-[100%] mx-4 md:mx-[70px]">
-          <h1 className="text-[40px] md:text-[50px] lg:text-[60px] font-bold">
+          <h1 className="text-[40px] md:text-[50px] lg:text-[60px] font-bold animate-fade-in-down">
             +38 Años Enseñando
           </h1>
-          <p className="text-start text-[16px] md:text-[20px] lg:text-[24px] text-wrap mb-5 ">
+          <p className="text-start text-[16px] md:text-[20px] lg:text-[24px] text-wrap mb-5 animate-fade-in">
             Desde 1986 brindando una educacion de calidad
           </p>
-          <p className="flex flex-wrap gap-[10px] text-[12px] md:text-[16px]">
+          <p className="flex flex-wrap gap-[10px] text-[12px] md:text-[16px] animate-fade-in-up">
             Nuestra escuela se fundo en Mar Del Plata en 1986 conocida por el
             nombre de <br></br> ENET N°3, que posterior mente fue renombrada
             EEST N°5 en 1994
           </p>
-          <div className="flex items-center justify-center w-16 h-16 mt-20">
+          <div className="flex items-center justify-center w-16 h-16 mt-20 animate-jump animate-iteration-count-infinite">
             <svg
               onClick={handleClick}
               xmlns="http://www.w3.org/2000/svg"
-              className="w-12 h-12 text-white-700 animate-bounce cursor-pointer"
+              className=" w-12 h-12 text-white-700 animate-bounce cursor-pointer"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
+              
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -59,7 +62,9 @@ export default function Nosotros() {
         </header>
       </Parallax>
       <main ref={contentRef} className="mt-20 md:mt-24">
-        <section className="flex flex-col md:flex-row md:justify-around items-center">
+        <section className="flex flex-col md:flex-row md:justify-around items-center"
+          InScroll="animate-slide-up-fade"
+        >
           <div className="flex flex-col flex-1 justify-center items-center text-center px-4 md:px-8">
             <h2 className="text-red-700 dark:text-red-500 font-bold text-3xl md:text-4xl lg:text-5xl">
               Nosotros

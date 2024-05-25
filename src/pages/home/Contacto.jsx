@@ -9,11 +9,11 @@ export default function Contacto() {
     <div className="bg-white dark:bg-[#2D2D2D] dark:text-white">
       <Parallax>
         <Nav />
-        <header className="text-white flex flex-col justify-center items-start h-[90%] mx-[5%] md:mx-[70px]">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-4 md:mb-8 md:mt-20 text-center md:text-left m-10">
+        <header className="text-white flex flex-col justify-center items-start h-[90%] mx-[5%] md:mx-[70px] ">
+          <h1 className="animate-fade-in-right text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-4 md:mb-8 md:mt-20 text-center md:text-left m-10">
             Ponte en contacto con nosotros
           </h1>
-          <p className="z-10 text-center text-[4vw] md:text-[25px] text-wrap mt-10 relative bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg mx-10">
+          <p className="z-10 text-center text-[4vw] md:text-[25px] text-wrap mt-10 relative backdrop-blur-lg mx-10 animate-fade-in-down">
             Nos encanta escuchar de ti y estamos aquí para ayudarte en lo que
             necesites. Puedes contactarnos mediante nuestro formulario de
             contacto en línea para cualquier pregunta o sugerencia que tengas.
@@ -21,7 +21,7 @@ export default function Contacto() {
             <a
               href="https://www.facebook.com"
               target="_blank"
-              className="text-sky-500 font-semibold hover:brightness-[2] transition duration-[.2s]"
+              className="text-blue-600 font-semibold hover:brightness-[2] transition duration-[.2s]"
             >
               Facebook
             </a>{" "}
@@ -29,7 +29,7 @@ export default function Contacto() {
             <a
               href="https://www.instagram.com"
               target="_blank"
-              className="text-pink-600 font-semibold hover:brightness-[2] transition duration-[.2s]"
+              className="text-pink-500 font-semibold hover:brightness-[2] transition duration-[.2s]"
             >
               Instagram
             </a>{" "}

@@ -15,7 +15,7 @@ export default function Home() {
       <body className="bg-black">
       <Parallax>
           <TitleHome/>
-        <main className=" flex flex-wrap justify-center items-center mt-36 sm:mt-10 md:mt-12 lg:mt-16 xl:mt-20 gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20">
+        <main className="flex flex-wrap justify-center items-center mt-36 sm:mt-10 md:mt-12 lg:mt-16 xl:mt-20 gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 animate-fade-in-up">
           <HomeButton text="Nuestro Contacto" img={comunicar} to="/contacto" />
           <HomeButton text="Ver Anuncios" img={anuncio} to="/anuncios" />
           <HomeButton text="Sobre Nosotros" img={equipo} to="/nosotros" />
