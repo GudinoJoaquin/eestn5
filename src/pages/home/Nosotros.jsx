@@ -5,7 +5,7 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import imagen from "../../assets/img/idi2_OLD.jpeg";
 
-import InScroll from "../../logic/AnimInScroll";
+import InScroll from "../../logic/inScroll";
 
 import l1 from "../../assets/img/l1.svg";
 import l2 from "../../assets/img/l2.svg";
@@ -50,7 +50,6 @@ export default function Nosotros() {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -62,44 +61,44 @@ export default function Nosotros() {
         </header>
       </Parallax>
       <main ref={contentRef} className="mt-20 md:mt-24">
-        <section className="flex flex-col md:flex-row md:justify-around items-center"
-          InScroll="animate-slide-up-fade"
-        >
-          <div className="flex flex-col flex-1 justify-center items-center text-center px-4 md:px-8">
-            <h2 className="text-red-700 dark:text-red-500 font-bold text-3xl md:text-4xl lg:text-5xl">
-              Nosotros
-            </h2>
-            <p className="mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-center mx-10">
-              Somos la Escuela de Educación Secundaria Técnica N°5. Estamos
-              situados en la hermosa ciudad de Mar del Plata, en la provincia de
-              Buenos Aires, Argentina.
-              <br />
-              <br />
-              Desde 1986, nos hemos dedicado a brindar una educación de calidad
-              en el ámbito técnico, preparando a nuestros estudiantes para
-              enfrentar los desafíos del mundo moderno en un espacio que inspira
-              al aprendizaje y el crecimiento.
-              <br />
-              <br />
-              Nuestros estudiantes tienen la oportunidad de adquirir habilidades
-              prácticas y especializadas que los prepararán para una exitosa
-              carrera profesional en diversos campos.
-              <br />
-              <br />
-              Nuestra institución ofrece diferentes especializaciones técnicas
-              en informática, electrónica y construcciones.
-            </p>
-          </div>
-          <div className="hidden md:flex flex-1 justify-center items-center">
-            <img
-              src={imagen}
-              alt=""
-              className="w-9/12 h-auto rounded-2xl hover:scale-105 transition duration-300"
-            />
-          </div>
-        </section>
-
-        <section className="flex flex-col md:flex-row mt-20 md:mt-24 items-center">
+        <InScroll>
+        <section id="nosotros" className="flex flex-col md:flex-row md:justify-around items-center animate-heartbeat">
+            <div className="flex flex-col flex-1 justify-center items-center text-center px-4 md:px-8 animate-fade-in-right">
+              <h2 className="text-red-700 dark:text-red-500 font-bold text-3xl md:text-4xl lg:text-5xl">
+                Nosotros
+              </h2>
+              <p className="mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-center mx-10">
+                Somos la Escuela de Educación Secundaria Técnica N°5. Estamos
+                situados en la hermosa ciudad de Mar del Plata, en la provincia
+                de Buenos Aires, Argentina.
+                <br />
+                <br />
+                Desde 1986, nos hemos dedicado a brindar una educación de
+                calidad en el ámbito técnico, preparando a nuestros estudiantes
+                para enfrentar los desafíos del mundo moderno en un espacio que
+                inspira al aprendizaje y el crecimiento.
+                <br />
+                <br />
+                Nuestros estudiantes tienen la oportunidad de adquirir
+                habilidades prácticas y especializadas que los prepararán para
+                una exitosa carrera profesional en diversos campos.
+                <br />
+                <br />
+                Nuestra institución ofrece diferentes especializaciones técnicas
+                en informática, electrónica y construcciones.
+              </p>
+            </div>
+            <div className="hidden md:flex flex-1 justify-center items-center animate-fade-in-left">
+              <img
+                src={imagen}
+                alt=""
+                className="w-9/12 h-auto rounded-2xl hover:scale-105 transition duration-300"
+              />
+            </div>
+          </section>
+          </InScroll>
+        <InScroll>
+        <section id="objetivos" className="flex flex-col md:flex-row mt-20 md:mt-24 items-center animate-heartbeat">
           <div className="hidden md:flex flex-col items-center gap-6 mt-10 ml-4 md:ml-12 md:w-1/4">
             <img
               src={l1b}
@@ -141,8 +140,9 @@ export default function Nosotros() {
             />
           </div>
         </section>
-
-        <section className="mt-20 mb-10 text-center">
+        </InScroll>
+        <InScroll>
+        <section id="contacto" className="mt-20 mb-10 text-center animate-heartbeat">
           <h2 className="text-red-700 dark:text-red-500 text-3xl md:text-4xl lg:text-5xl font-bold">
             Únete a nosotros
           </h2>
@@ -159,6 +159,7 @@ export default function Nosotros() {
             Contáctanos
           </Link>
         </section>
+        </InScroll>
       </main>
       <Footer />
     </body>

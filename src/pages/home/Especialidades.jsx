@@ -18,10 +18,10 @@ export default function Contacto() {
       <Parallax>
          <Nav />
         <header className="text-white flex flex-col justify-center items-center mx-4 md:items-start md:mx-[70px]">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-4 md:mb-8 md:mt-20 text-center md:text-left m-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-4 md:mb-8 md:mt-20 text-center md:text-left m-10 animate-fade-in-right">
             Nuestras Especialidades
           </h1>
-          <p className="text-sm md:text-lg lg:text-xl bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg p-1 md:p-5 rounded-lg mt-10 text-center md:text-left m-10">
+          <p className="text-sm md:text-lg lg:text-xl  backdrop-blur-lg p-1 md:p-5 rounded-lg mt-10 text-center md:text-left m-10 animate-fade-in-up">
             En nuestra institución, los estudiantes tienen la oportunidad de
             especializarse en tres áreas fundamentales para la vida moderna:
             informática, electrónica y construcciones. La especialización en
@@ -76,7 +76,7 @@ export default function Contacto() {
 
         {visibleSection === "informatica" && (
           <section>
-          <div className="mx-4 md:mx-[220px]">
+          <div className="mx-4 md:mx-[220px] animate-shake">
             <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl underline underline-offset-2 mt-8 mb-4">
               Informática Profesional y Personal
             </h2>
@@ -115,7 +115,7 @@ export default function Contacto() {
 
         {visibleSection === "electronica" && (
           <section>
-          <div className="mx-4 md:mx-[220px]">
+          <div className="mx-4 md:mx-[220px] animate-shake">
             <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl underline underline-offset-2 mt-8 mb-4">
               Electrónica
             </h2>
@@ -139,7 +139,7 @@ export default function Contacto() {
 
         {visibleSection === "construcciones" && (
           <section>
-          <div className="mx-4 md:mx-[220px]">
+          <div className="mx-4 md:mx-[220px] animate-shake">
             <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl underline underline-offset-2 mt-8 mb-4">
               Maestro Mayor de Obras
             </h2>
