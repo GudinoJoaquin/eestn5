@@ -40,7 +40,9 @@ export default function Nav() {
       >
         <div
           id="logo"
-          className="cursor-pointer flex flex-col items-center justify-center h-28 p-2 pointer-events-auto "
+          className={`cursor-pointer flex flex-col items-center justify-center h-28 p-2 pointer-events-auto ${
+            isTransparent ? "animate-fade-in-up" : "animate-fade-out-down"
+          }`}
           onClick={toggleNav}
         >
           <img src={logo} alt="Logo" className="w-20 h-auto bg-transparent" />
