@@ -58,8 +58,8 @@ export default function AdminCard({
           toast.loading("Volviendo al inicio");
           setTimeout(() => {
             window.location.href = "http://localhost:5173/anuncios/";
-          }, 2000);
-        }, 1000);
+          }, 1000);
+        }, 500);
       })
       .catch((error) => {
         console.error("Error al eliminar el anuncio:", error);
