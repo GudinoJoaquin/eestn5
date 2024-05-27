@@ -90,14 +90,14 @@ export default function AdminCard({
         <div className="p-6 xl:flex-1">
           <div className="flex">
             <div className="flex-1 mr-[20px]">
-              <div className="flex">
-                <h5 className="font-bold text-[30px] ">{titulo}</h5>
+              <div className="flex justify-around">
+                <h5 className="font-bold text-[30px] relative right-[5vw]">{titulo}</h5>
                 <h5 className="font-semibold text-[20px] ml-[20px] mt-[10px] text-blue-500">
                   {fecha}
                 </h5>
               </div>
               <p className="font-sans font-light leading-relaxed text-wrap flex-1">
-                {truncateText(mensaje, 450)}
+                {truncateText(mensaje, 400)}
               </p>
               <div className="flex gap-[50px] ml-[20px] mt-[10px]">
                 <button
