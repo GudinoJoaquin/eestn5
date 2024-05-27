@@ -21,7 +21,7 @@ export default function Contacto() {
             <a
               href="https://www.facebook.com"
               target="_blank"
-              className="text-blue-600 font-semibold hover:brightness-[2] transition duration-[.2s]"
+              className="text-blue-700 font-semibold hover:brightness-[2] transition duration-[.2s]"
             >
               Facebook
             </a>{" "}
@@ -29,7 +29,7 @@ export default function Contacto() {
             <a
               href="https://www.instagram.com"
               target="_blank"
-              className="text-pink-500 font-semibold hover:brightness-[2] transition duration-[.2s]"
+              className="text-red-500 font-semibold hover:brightness-[2] transition duration-[.2s]"
             >
               Instagram
             </a>{" "}

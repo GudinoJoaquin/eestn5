@@ -39,7 +39,7 @@ export default function Nosotros() {
           <p className="flex flex-wrap gap-[10px] text-[12px] md:text-[16px] animate-fade-in-up">
             Nuestra escuela se fundo en Mar Del Plata en 1986 conocida por el
             nombre de <br></br> ENET N°3, que posterior mente fue renombrada
-            EEST N°5 en 1994
+            EET N°5 en 1994
           </p>
           <div className="flex items-center justify-center w-16 h-16 mt-20 animate-jump animate-iteration-count-infinite">
             <svg

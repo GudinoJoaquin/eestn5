@@ -47,7 +47,7 @@ export default function Anuncios() {
       <Routes>
         <Route path="/crearAnuncio" element={<CrearAnuncio />} />
         <Route path="/editarAnuncio" element={<ModificarAnuncio />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/ia" element={<Login />} />
         <Route
           path="/"
           element={userType === "hola" ? <AdminAnuncios /> : <UserAnuncios />}
