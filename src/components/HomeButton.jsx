@@ -11,8 +11,12 @@ export default function HomeButton({ text, img, to }) {
     >
       <img src={img} alt="" width="60px" className="mb-2" />
       <p className="text-center">
-        {text.split(" ")[0]} <br />
-        {text.split(" ")[1]}
+        {text.split(" ").map((word, index) => (
+          <React.Fragment key={index}>
+            {word}
+            <br />
+          </React.Fragment>
+        ))}
       </p>
     </Link>
   );

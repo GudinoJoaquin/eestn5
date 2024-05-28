@@ -30,15 +30,15 @@ export default function Nosotros() {
       <Parallax>
         <Nav />
         <header className="text-white flex flex-col justify-center items-center h-[100%] mx-4 md:mx-[70px]">
-          <h1 className="text-[40px] md:text-[50px] lg:text-[60px] font-bold animate-fade-in-down">
+        <h1 className="text-[25px] sm:text-[30px] md:text-[40px] lg:text-[50px] xl:text-[60px] 2xl:text-[70px] font-bold animate-fade-in-down">
             +38 Años Enseñando
           </h1>
-          <p className="text-start text-[16px] md:text-[20px] lg:text-[24px] text-wrap mb-5 animate-fade-in">
+          <p className="text-center text-[16px] md:text-[20px] lg:text-[24px] text-wrap mb-5 animate-fade-in">
             Desde 1986 brindando una educacion de calidad
           </p>
-          <p className="flex flex-wrap gap-[10px] text-[12px] md:text-[16px] animate-fade-in-up">
+          <p className="flex flex-wrap gap-[10px] text-[12px] md:text-[16px] md:mx-[300px] animate-fade-in-up mx-[10%]">
             Nuestra escuela se fundo en Mar Del Plata en 1986 conocida por el
-            nombre de <br></br> ENET N°3, que posterior mente fue renombrada
+            nombre de ENET N°3, que posterior mente fue renombrada
             EET N°5 en 1994
           </p>
           <div className="flex items-center justify-center w-16 h-16 mt-20 animate-jump animate-iteration-count-infinite">
