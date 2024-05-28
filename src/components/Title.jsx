@@ -11,9 +11,9 @@ export default function TitleHome() {
           Amancio Williams
         </h2>
         <hr className={`my-1 md:my-2 lg:my-3 mx-auto w-1/4 md:w-1/3 lg:w-1/3 border-1  animate-expand-horizontally`} />
-        <h3 className={`text-1xl md:text-2xl lg:text-2xl  animate-zoom-in`}>
+        <h2 className={`text-1xl md:text-2xl lg:text-2xl  animate-zoom-in`}>
           Mar Del Plata
-        </h3>
+        </h2>
       </div>
     </header>
   );
