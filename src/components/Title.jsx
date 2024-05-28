@@ -19,9 +19,9 @@ export default function TitleHome() {
         <hr
           className={`my-1 md:my-2 lg:my-3 mx-auto w-1/4 md:w-1/3 lg:w-1/3 border-1  animate-expand-horizontally`}
         />
-        <h2 className={`text-lg md:text-xl lg:text-xl animate-zoom-in`}>
-          Mar Del Plata
-        </h2>
+        <h3 className={`text-1xl md:text-2xl lg:text-2xl  animate-zoom-in`}>
+          {"Mar del Plata"}
+        </h3>
       </div>
     </header>
   );
