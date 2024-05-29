@@ -4,12 +4,8 @@ import Contacto from "./pages/home/Contacto.jsx";
 import Nosotros from "./pages/home/Nosotros.jsx";
 import Especialidades from "./pages/home/Especialidades.jsx";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Anuncios from "./pages/anuncios/Anuncios.jsx";
-import AdminAnuncios from "./pages/anuncios/AdminAnuncios.jsx";
 import NotFound from "./pages/NotFound.jsx";
-import Nav from "./components/Nav.jsx";
-import Footer from "./components/Footer.jsx";
-import CrearAnuncio from "./pages/anuncios/CrearAnuncio.jsx";
+import UserAnuncios from "./pages/anuncios/UserAnuncios.jsx";
 
 export default function App() {
   return (
@@ -19,7 +15,7 @@ export default function App() {
         <Route path="/notfound" element={<NotFound />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/nosotros" element={<Nosotros />} />
-        <Route path="/anuncios/*" element={<Anuncios />} />
+        <Route path="/anuncios" element={<UserAnuncios />} />
         <Route path="/especialidades" element={<Especialidades />} />
       </Routes>
     </Router>

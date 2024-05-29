@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import UserCard from "../../components/UserCard";
 import ThemeSwitch from "../../components/ThemeSwitch";
+import Loader from "react-js-loader";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
-import Loader from "react-js-loader";
 
 export default function UserAnuncios() {
   const [anuncios, setAnuncios] = useState([]);
@@ -44,6 +44,7 @@ export default function UserAnuncios() {
 
   return (
     <>
+      <Nav />
       <div className="dark:bg-slate-900 h-full over">
         {/* <ThemeSwitch /> */}
         {loading ? (
@@ -99,6 +100,7 @@ export default function UserAnuncios() {
           </>
         )}
       </div>
+      <Footer />
     </>
   );
 }

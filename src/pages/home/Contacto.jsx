@@ -1,7 +1,7 @@
 import React from "react";
-import Nav from "../../components/Nav";
-import Parallax from "../../components/Parallax";
-import Footer from "../../components/Footer";
+import Nav from "../../components/Nav.jsx";
+import Parallax from "../../components/Parallax.jsx";
+import Footer from "../../components/Footer.jsx";
 import { Link } from "react-router-dom";
 
 export default function Contacto() {
