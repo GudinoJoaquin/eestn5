@@ -3,7 +3,7 @@ import Home from "./pages/home/Home.jsx";
 import Contacto from "./pages/home/Contacto.jsx";
 import Nosotros from "./pages/home/Nosotros.jsx";
 import Especialidades from "./pages/home/Especialidades.jsx";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import NotFound from "./pages/NotFound.jsx";
 import UserAnuncios from "./pages/anuncios/UserAnuncios.jsx";
 
