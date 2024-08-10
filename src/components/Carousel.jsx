@@ -50,7 +50,7 @@ const Carousel = () => {
                 className={`flex-shrink-0 w-full h-24 sm:h-32 bg-transparent flex items-center justify-center`}
               >
                 {/* Muestra el título del anuncio y establece un enlace al hacer clic */}
-                <span className="text-white text-sm sm:text-xl cursor-pointer m-2 sm:m-5" onClick={() => window.location.href = 'https://eestn5-rho.vercel.app/#/anuncios'}>{ad.titulo}</span>
+                <span className="text-white text-sm sm:text-xl cursor-pointer m-2 sm:m-5" onClick={() => window.location.href = 'https://eest5mdp.edu.ar/#/anuncios'}>{ad.titulo}</span>
               </div>
             ))
           )}
