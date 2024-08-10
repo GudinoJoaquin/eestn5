@@ -12,7 +12,7 @@ const Carousel = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://anuncios.vercel.app/anuncios/");
+        const response = await fetch("https://api-chi-ochre.vercel.app/");
         const data = await response.json();
         // Almacena los primeros tres anuncios en el estado
         setFirstThreeAds(data.slice(0, 3));

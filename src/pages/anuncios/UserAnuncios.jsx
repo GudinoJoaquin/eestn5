@@ -13,7 +13,7 @@ export default function UserAnuncios() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = "https://anuncios.vercel.app/anuncios/";
+      const url = "https://api-chi-ochre.vercel.app/";
       try {
         const response = await fetch(url);
         const data = await response.json();
