@@ -6,7 +6,7 @@
       rgba(0, 0, 0, 0.664) 100%,
       rgba(255, 255, 255, 0) 100%
     ),
-    url("../img/idi2o.jpeg");
+    url("../img/escuela,fondo. png.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -15,13 +15,13 @@
   user-select: none;
 }
 
-@media screen and (max-width: 768px){
-.parallax-completo {
-  background-image: radial-gradient(
-      circle,
-      rgba(0, 0, 0, 0.664) 100%,
-      rgba(255, 255, 255, 0) 100%
-    ),
-    url("../img/idi2_OLD.jpeg");
-}
+@media screen and (max-width: 768px) {
+  .parallax-completo {
+    background-image: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0.664) 100%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      url("../img/escuela,fondo. png.png");
+  }
 }

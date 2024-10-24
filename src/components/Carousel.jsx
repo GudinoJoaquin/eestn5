@@ -12,7 +12,7 @@ const Carousel = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://api-chi-ochre.vercel.app/");
+        const response = await fetch("https://anuncios.vercel.app");
         const data = await response.json();
         // Almacena los primeros tres anuncios en el estado
         setFirstThreeAds(data.slice(0, 3));
@@ -50,7 +50,15 @@ const Carousel = () => {
                 className={`flex-shrink-0 w-full h-24 sm:h-32 bg-transparent flex items-center justify-center`}
               >
                 {/* Muestra el título del anuncio y establece un enlace al hacer clic */}
-                <span className="text-white text-sm sm:text-xl cursor-pointer m-2 sm:m-5" onClick={() => window.location.href = 'https://eest5mdp.edu.ar/#/anuncios'}>{ad.titulo}</span>
+                <span
+                  className="text-white text-sm sm:text-xl cursor-pointer m-2 sm:m-5"
+                  onClick={() =>
+                    (window.location.href =
+                      "https://eest5mdp.edu.ar/#/anuncios")
+                  }
+                >
+                  {ad.titulo}
+                </span>
               </div>
             ))
           )}

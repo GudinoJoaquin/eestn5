@@ -106,10 +106,10 @@ export default function Contacto() {
                 Email:
                 <br />
                 <a
-                  href="mailto:infoT5@gmail.com"
+                  href="mailto:infoT5@eest5mdp.edu.ar"
                   className="sm:text-[1.3vw] text-red-400 hover:text-red-600"
                 >
-                  infoT5@gmail.com
+                  infoT5@eest5mdp.edu.ar
                 </a>
               </h6>
             </div>
