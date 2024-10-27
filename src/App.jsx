@@ -17,6 +17,7 @@ export default function App() {
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/anuncios" element={<UserAnuncios />} />
         <Route path="/especialidades" element={<Especialidades />} />
+        <Route path="/*" element={<Home />} />
       </Routes>
     </Router>
   );

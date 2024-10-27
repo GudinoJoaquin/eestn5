@@ -1,4 +1,4 @@
-.parallax-completo {
+.parallax-real {
   width: 100%;
   height: 93.3vh;
   background: radial-gradient(
@@ -6,7 +6,7 @@
       rgba(0, 0, 0, 0.664) 100%,
       rgba(255, 255, 255, 0) 100%
     ),
-    url("../img/escuela,fondo. png.png");
+    url("../img/idi2o.jpeg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,12 +16,40 @@
 }
 
 @media screen and (max-width: 768px) {
-  .parallax-completo {
+  .parallax-real {
     background-image: radial-gradient(
         circle,
         rgba(0, 0, 0, 0.664) 100%,
         rgba(255, 255, 255, 0) 100%
       ),
-      url("../img/escuela,fondo. png.png");
+      url("../img/idi2o.jpeg");
+  }
+}
+
+.parallax-img {
+  width: 100%;
+  height: 93.3vh;
+  background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.664) 100%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url("../img/escuela-fondo.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Añade esta línea para que los elementos se posicionen uno debajo del otro */
+  text-align: center; /* Añade esta línea para centrar el texto */
+  user-select: none;
+}
+
+@media screen and (max-width: 768px) {
+  .parallax-img {
+    background-image: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0.664) 100%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      url("../img/escuela-fondo.webp");
   }
 }
