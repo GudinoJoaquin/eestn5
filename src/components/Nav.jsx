@@ -88,6 +88,13 @@ export default function Nav() {
           >
             Contacto
           </Link>
+          <Link
+            to="../galeria"
+            className="text-lg text-slate-200 mx-auto transition duration-300 ease-in-out hover:text-green-500"
+          >
+            Galeria
+          </Link>
+
           <div className="flex justify-center items-center relative left-[10px]">
             <ThemeSwitch />
           </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Parallax from "../../components/Parallax";
 import Footer from "../../components/Footer";
@@ -11,6 +11,33 @@ import experto from "../../assets/img/experto.svg";
 import Carousel from "../../components/Carousel";
 
 export default function Home() {
+  const [timeRemaining, setTimeRemaining] = useState("");
+
+  useEffect(() => {
+    const targetDate = new Date("2024-11-13T08:30:00").getTime();
+
+    const intervalId = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(intervalId);
+        setTimeRemaining("¡La ExpoTec 2024 ya ha comenzado!");
+      } else {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        setTimeRemaining(`${days} días ${hours}:${minutes}:${seconds}`);
+      }
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <>
       <div className="bg-black">
@@ -31,6 +58,19 @@ export default function Home() {
                 img={experto}
                 to="/especialidades"
               />
+            </div>
+
+            <div className="flex justify-center mt-[30px]">
+              <div className="md:w-[400px] md:h-[150px] border border-white rounded-[20px] flex justify-center items-center">
+                <p className="text-white text-center md:text-[20px] font-semibold">
+                  Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
+                  de noviembre
+                  <p className="mt-[10px]">
+                    Faltan: {}
+                    {timeRemaining}
+                  </p>
+                </p>
+              </div>
             </div>
           </main>
         </Parallax>

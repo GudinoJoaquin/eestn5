@@ -6,6 +6,7 @@ import Especialidades from "./pages/home/Especialidades.jsx";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import NotFound from "./pages/NotFound.jsx";
 import UserAnuncios from "./pages/anuncios/UserAnuncios.jsx";
+import Galeria from "./pages/home/Galeria.jsx";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/anuncios" element={<UserAnuncios />} />
         <Route path="/especialidades" element={<Especialidades />} />
+        <Route path="/galeria" element={<Galeria />} />
         <Route path="/*" element={<Home />} />
       </Routes>
     </Router>
