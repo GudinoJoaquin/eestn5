@@ -58,6 +58,8 @@ export default function Home() {
                 img={experto}
                 to="/especialidades"
               />
+              {/* <HomeButton text="Galeria" img={anuncio} to="/galeria" /> */}
+              
             </div>
 
             <div className="flex justify-center mt-[30px]">

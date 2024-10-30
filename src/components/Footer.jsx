@@ -62,6 +62,7 @@ export default function Footer() {
             <li className="inline-block scale-[0.75] hover:scale-[0.85] hover:bg-red-600 rounded-full transition duration-[.3s]">
               <SocialIcon url="mailto:infoT5@eest5mdp.edu.ar" bgColor="transparent" />
             </li>
+            
           </ul>
         </div>
       </div>
