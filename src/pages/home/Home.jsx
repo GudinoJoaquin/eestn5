@@ -31,7 +31,13 @@ export default function Home() {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        setTimeRemaining(`${days} días ${hours}:${minutes}:${seconds}`);
+        setTimeRemaining(
+          `${days > 1 ? `${days} días` : `${days} dia`} ${
+            hours >= 10 ? hours : `0${hours}`
+          }:${minutes >= 10 ? minutes : `0${minutes}`}:${
+            seconds >= 10 ? seconds : `0${seconds}`
+          }`
+        );
       }
     }, 1000);
 
