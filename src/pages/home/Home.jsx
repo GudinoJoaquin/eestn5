@@ -44,9 +44,9 @@ export default function Home() {
         <Parallax>
           <TitleHome />
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
-          <div className="flex justify-center mt-[30px]">
-              <div className="md:w-[400px] md:h-[150px] border border-white rounded-[20px] flex justify-center items-center">
-                <p className="text-white text-center md:text-[20px] font-semibold">
+            <div className="flex justify-center mt-[30px]">
+              <div className="xl:w-[400px] xl:h-[150px] w-[300px] h-[120px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center">
+                <p className="text-white text-center xl:text-[20px]  font-semibold">
                   Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
                   de noviembre
                   <p className="mt-[10px]">
@@ -71,10 +71,7 @@ export default function Home() {
                 to="/especialidades"
               />
               {/* <HomeButton text="Galeria" img={anuncio} to="/galeria" /> */}
-              
             </div>
-
-            
           </main>
         </Parallax>
       </div>
