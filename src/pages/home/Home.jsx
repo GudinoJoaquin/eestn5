@@ -44,6 +44,18 @@ export default function Home() {
         <Parallax>
           <TitleHome />
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
+          <div className="flex justify-center mt-[30px]">
+              <div className="md:w-[400px] md:h-[150px] border border-white rounded-[20px] flex justify-center items-center">
+                <p className="text-white text-center md:text-[20px] font-semibold">
+                  Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
+                  de noviembre
+                  <p className="mt-[10px]">
+                    Faltan: {}
+                    {timeRemaining}
+                  </p>
+                </p>
+              </div>
+            </div>
             <Carousel />
             <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 animate-fade-in-up">
               <HomeButton
@@ -62,18 +74,7 @@ export default function Home() {
               
             </div>
 
-            <div className="flex justify-center mt-[30px]">
-              <div className="md:w-[400px] md:h-[150px] border border-white rounded-[20px] flex justify-center items-center">
-                <p className="text-white text-center md:text-[20px] font-semibold">
-                  Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
-                  de noviembre
-                  <p className="mt-[10px]">
-                    Faltan: {}
-                    {timeRemaining}
-                  </p>
-                </p>
-              </div>
-            </div>
+            
           </main>
         </Parallax>
       </div>
