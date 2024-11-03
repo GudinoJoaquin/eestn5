@@ -15,7 +15,7 @@ export default function DevsModal({ onClose }) {
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
       onClick={handleOverlayClick}
     >
-      <div className="bg-white rounded-[10px] w-[40vw] h-[80vh] max-w-[60vw] max-h-[60vh] flex backdrop-brightness-50">
+      <div className="bg-white rounded-[10px] xl:w-[40vw] w-[80vw] h-[60vh] max-h-[60vh] flex backdrop-brightness-50">
         <div className="text-black flex-1 p-[15px] text-[25px] font-bold">
           <main className="text-[25px] font-bold px-[10px]">
             <p className="mb-[20px] border-b-[2px] border-gray-400/50 p-[5px] flex items-center gap-[10px]">
