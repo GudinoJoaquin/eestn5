@@ -9,6 +9,7 @@ import UserAnuncios from "./pages/anuncios/UserAnuncios.jsx";
 import Galeria from "./pages/home/Galeria.jsx";
 
 export default function App() {
+
   return (
     <Router>
       <Routes>
