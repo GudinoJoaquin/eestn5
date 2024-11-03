@@ -4,11 +4,13 @@ import ThemeSwitch from "../../components/ThemeSwitch";
 import Loader from "react-js-loader";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
+import DevsModal from "../../components/DevsModal";
 
 export default function UserAnuncios() {
   const [anuncios, setAnuncios] = useState([]);
   const [loading, setLoading] = useState(true); // Estado para manejar el loading
   const [currentPage, setCurrentPage] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const adsPerPage = 5;
 
   useEffect(() => {
@@ -100,7 +102,8 @@ export default function UserAnuncios() {
           </>
         )}
       </div>
-      <Footer />
+      <Footer modal={(estado) => setIsModalOpen(estado)} />
+      {isModalOpen && <DevsModal onClose={() => setIsModalOpen(false)} />}
     </>
   );
 }

@@ -1,5 +1,3 @@
-import idi2o from "../assets/img/idi2o.jpeg";
-
 export default function Modal({ img, alt, onClose }) {
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "../../components/Nav.jsx";
 import Parallax from "../../components/Parallax.jsx";
 import Footer from "../../components/Footer.jsx";
 import { Link } from "react-router-dom";
+import DevsModal from "../../components/DevsModal.jsx";
 
 export default function Contacto() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="bg-white dark:bg-[#2D2D2D] dark:text-white">
       <Parallax>
@@ -125,7 +127,8 @@ export default function Contacto() {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer modal={(estado) => setIsModalOpen(estado)} />
+      {isModalOpen && <DevsModal onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 }

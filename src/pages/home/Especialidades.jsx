@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Nav from "../../components/Nav";
 import Parallax from "../../components/Parallax";
 import Footer from "../../components/Footer";
+import DevsModal from "../../components/DevsModal";
 
 export default function Contacto() {
   const [visibleSection, setVisibleSection] = useState("informatica");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showContent = (id) => {
     setVisibleSection(id);
@@ -228,7 +230,8 @@ export default function Contacto() {
             </section>
           )}
         </main>
-        <Footer />
+        <Footer modal={(estado) => setIsModalOpen(estado)} />
+        {isModalOpen && <DevsModal onClose={() => setIsModalOpen(false)} />}
       </body>
     </>
   );

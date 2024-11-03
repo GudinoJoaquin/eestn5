@@ -9,9 +9,11 @@ import anuncio from "../../assets/img/anuncio-publicitario (1).svg";
 import equipo from "../../assets/img/equipo.svg";
 import experto from "../../assets/img/experto.svg";
 import Carousel from "../../components/Carousel";
+import DevsModal from "../../components/DevsModal";
 
 export default function Home() {
   const [timeRemaining, setTimeRemaining] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     const targetDate = new Date("2024-11-13T08:30:00").getTime();
@@ -81,7 +83,8 @@ export default function Home() {
           </main>
         </Parallax>
       </div>
-      <Footer />
+      <Footer modal={(estado) => setIsModalOpen(estado)}/>
+      {isModalOpen && <DevsModal onClose={() => setIsModalOpen(false)} />}
     </>
   );
 }

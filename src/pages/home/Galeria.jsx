@@ -5,9 +5,11 @@ import Footer from "../../components/Footer.jsx";
 import idi2o from "../../assets/img/idi2o.jpeg";
 import Bento from "../../components/Bento.jsx";
 import Modal from "../../components/Modal.jsx";
+import DevsModal from "../../components/DevsModal.jsx";
 
 export default function Galeria() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDevsModalOpen, setIsDevsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
 
   const openModal = (img) => {
@@ -63,20 +65,47 @@ export default function Galeria() {
 
             {/* Bentogrid layout */}
             <div className="grid grid-cols-4 gap-[22px] mx-auto select-none">
-              <Bento img={idi2o} alt="Escuela" size="large" onClick={() => openModal(idi2o)} />
-              <Bento img={idi2o} alt="Escuela" size="medium" onClick={() => openModal(idi2o)} />
-              <Bento img={idi2o} alt="Escuela" size="small" onClick={() => openModal(idi2o)} />
-              <Bento img={idi2o} alt="Escuela" size="small" onClick={() => openModal(idi2o)} />
+              <Bento
+                img={idi2o}
+                alt="Escuela"
+                size="large"
+                onClick={() => openModal(idi2o)}
+              />
+              <Bento
+                img={idi2o}
+                alt="Escuela"
+                size="medium"
+                onClick={() => openModal(idi2o)}
+              />
+              <Bento
+                img={idi2o}
+                alt="Escuela"
+                size="small"
+                onClick={() => openModal(idi2o)}
+              />
+              <Bento
+                img={idi2o}
+                alt="Escuela"
+                size="small"
+                onClick={() => openModal(idi2o)}
+              />
               {/* Agrega más Bentos según sea necesario */}
             </div>
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer modal={(estado) => setIsDevsModalOpen(estado)} />
+      {isDevsModalOpen && (
+        <DevsModal onClose={() => setIsDevsModalOpen(false)} />
+      )}
 
       {/* Modal */}
       {isModalOpen && (
-        <Modal img={modalImage} alt="Imagen de la galería" onClose={closeModal} />
+        <Modal
+          img={modalImage}
+          alt="Imagen de la galería"
+          onClose={closeModal}
+        />
       )}
     </div>
   );

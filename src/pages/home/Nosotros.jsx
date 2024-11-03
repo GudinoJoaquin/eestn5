@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Parallax from "../../components/Parallax";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import imagen from "../../assets/img/idi2_OLD-D4B2EUtT (1) (1).jpeg";
+import DevsModal from "../../components/DevsModal";
 
 import InScroll from "../../logic/inScroll";
 
@@ -17,6 +18,8 @@ import l3b from "../../assets/img/l3b.svg";
 import l4b from "../../assets/img/l4b.svg";
 
 export default function Nosotros() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const contentRef = useRef(null);
 
   const handleClick = () => {
@@ -171,7 +174,8 @@ export default function Nosotros() {
           </section>
         </InScroll>
       </main>
-      <Footer />
+      <Footer modal={(estado) => setIsModalOpen(estado)} />
+      {isModalOpen && <DevsModal onClose={() => setIsModalOpen(false)} />}
     </body>
   );
 }
