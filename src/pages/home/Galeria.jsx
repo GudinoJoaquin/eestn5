@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Nav from "../../components/Nav.jsx";
 import Parallax from "../../components/Parallax.jsx";
 import Footer from "../../components/Footer.jsx";
@@ -11,6 +11,19 @@ export default function Galeria() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDevsModalOpen, setIsDevsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const openModal = (img) => {
     setModalImage(img);
@@ -40,20 +53,18 @@ export default function Galeria() {
           </div>
 
           {/* Contenedor de las imágenes Polaroid */}
-          <div className="relative flex mt-[300px] translate-x-[-100px]">
-            <div
-              className="bg-white p-[16px] pb-[70px] border border-gray-300 shadow-lg transform rotate-[10deg] w-[400px] h-[350px] translate-y-[-200px] translate-x-[100px]"
-              onClick={() => openModal(idi2o)}
-            >
-              <img src={idi2o} alt="Placeholder 1" className="w-full" />
+          {screenWidth >= 738 ? (
+            <div className="relative flex mt-[300px] translate-x-[-100px]">
+              <div
+                className="bg-white 2xl:p-[16px] p-[16px] 2xl:pb-[70px] pb-[70px] border border-gray-300 shadow-lg transform rotate-[10deg] 2xl:w-[400px] w-[350px] 2xl:h-[350px] h-[150px] translate-y-[-200px] translate-x-[100px]"
+                onClick={() => openModal(idi2o)}
+              >
+                <img src={idi2o} alt="Placeholder 1" className="w-full" />
+              </div>
             </div>
-            <div
-              className="bg-white p-[16px] pb-[70px] border border-gray-300 shadow-lg transform rotate-[-20deg] w-[400px] translate-y-[100px] translate-x-[-100px]"
-              onClick={() => openModal(idi2o)}
-            >
-              <img src={idi2o} alt="Placeholder 1" className="w-full" />
-            </div>
-          </div>
+          ) : (
+            ""
+          )}
         </header>
       </Parallax>
       <main>

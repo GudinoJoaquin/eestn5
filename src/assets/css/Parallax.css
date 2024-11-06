@@ -1,6 +1,6 @@
 .parallax-real {
   width: 100%;
-  height: 93.3vh;
+  height: 93.5vh;
   background: radial-gradient(
       circle,
       rgba(0, 0, 0, 0.664) 100%,
@@ -23,6 +23,25 @@
         rgba(255, 255, 255, 0) 100%
       ),
       url("../img/idi2o.jpeg");
+  }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1920px) {
+  .parallax-real {
+    width: 100%;
+    height: 103vh;
+    background: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0.664) 100%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      url("../img/idi2o.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Añade esta línea para que los elementos se posicionen uno debajo del otro */
+    text-align: center; /* Añade esta línea para centrar el texto */
+    user-select: none;
   }
 }
 
