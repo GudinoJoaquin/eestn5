@@ -49,7 +49,7 @@ export default function Home() {
 
   return (
     <div className="layout">
-      <div className="bg-black">
+      <div className="bg-black xl:mb-[10px]">
         <Parallax>
           <TitleHome />
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
@@ -66,7 +66,7 @@ export default function Home() {
               </div>
             </div>
             <Carousel />
-            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 xl:mb-[10px] 2xl:mb-0 animate-fade-in-up">
+            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20  animate-fade-in-up">
               <HomeButton
                 text="Nuestro Contacto"
                 img={comunicar}
