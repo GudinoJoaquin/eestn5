@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Parallax from "../../components/Parallax";
+import "../../assets/css/layout.css";
 import Footer from "../../components/Footer";
 import HomeButton from "../../components/HomeButton";
 import TitleHome from "../../components/Title";
@@ -47,7 +48,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="grid min-h-[100dvh] grid-rows-1">
+    <div className="layout">
       <div className="bg-black">
         <Parallax>
           <TitleHome />
