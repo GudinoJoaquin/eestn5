@@ -54,7 +54,7 @@ export default function Home() {
           <TitleHome />
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
             <div className="flex justify-center mt-[30px]">
-              <div className="xl:w-[400px] xl:h-[150px] w-[300px] h-[70px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center">
+              <div className="xl:w-[400px] xl:h-[150px] w-[300px] h-[80px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center">
                 <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
                   Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
                   de noviembre
@@ -66,7 +66,7 @@ export default function Home() {
               </div>
             </div>
             <Carousel />
-            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20  animate-fade-in-up">
+            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 xl:mt-[-10px] animate-fade-in-up">
               <HomeButton
                 text="Nuestro Contacto"
                 img={comunicar}
