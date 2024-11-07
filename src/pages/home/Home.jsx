@@ -13,7 +13,7 @@ import DevsModal from "../../components/DevsModal";
 
 export default function Home() {
   const [timeRemaining, setTimeRemaining] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const targetDate = new Date("2024-11-13T08:30:00").getTime();
@@ -47,7 +47,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div className="grid min-h-[100dvh] grid-rows-1">
       <div className="bg-black">
         <Parallax>
           <TitleHome />
@@ -83,8 +83,8 @@ export default function Home() {
           </main>
         </Parallax>
       </div>
-      <Footer modal={(estado) => setIsModalOpen(estado)}/>
+      <Footer modal={(estado) => setIsModalOpen(estado)} />
       {isModalOpen && <DevsModal onClose={() => setIsModalOpen(false)} />}
-    </>
+    </div>
   );
 }
