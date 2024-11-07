@@ -15,7 +15,7 @@ export default function Contacto() {
           <h1 className="animate-fade-in-right text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-4 md:mb-8 md:mt-20 text-center md:text-left m-10">
             Ponte en contacto con nosotros
           </h1>
-          <p className="z-10 text-center text-[3.6vw] md:text-[23px] text-wrap mt-9 relative backdrop-blur-lg mx-10 animate-fade-in-down">
+          <p className="z-10 text-center text-[3.6vw] md:text-[23px] text-wrap mt-9 mb-[10px] relative backdrop-blur-lg mx-10 animate-fade-in-down">
             Nos encanta escuchar de ti y estamos aquí para ayudarte en lo que
             necesites. Puedes contactarnos mediante nuestro formulario de
             contacto en línea para cualquier pregunta o sugerencia que tengas.
