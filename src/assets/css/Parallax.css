@@ -26,7 +26,7 @@
   }
 }
 
-@media screen and (min-width: 1366px) and (max-width: 1920px) {
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
   .parallax-real {
     width: 100%;
     height: auto;
