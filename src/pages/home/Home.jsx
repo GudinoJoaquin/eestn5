@@ -79,7 +79,7 @@ export default function Home() {
                 img={experto}
                 to="/especialidades"
               />
-              <HomeButton text="Galeria" img={anuncio} to="/galeria" />
+              {/* <HomeButton text="Galeria" img={anuncio} to="/galeria" /> */}
             </div>
           </main>
         </Parallax>
