@@ -40,8 +40,8 @@ export default function Galeria() {
       <Parallax>
         <Nav />
         <header className="text-white flex justify-center items-start h-[90%] mx-[5%] md:mx-[70px] relative">
-          <div className="mt-[50px] flex flex-col justify-center items-center">
-            <h1 className="animate-fade-in-right text-[40px] md:text-5xl lg:text-6xl font-bold mt-[220px] md:mb-8 md:mt-20 text-center md:text-left m-10">
+          <div className="flex flex-col justify-center items-center">
+            <h1 className="animate-fade-in-right text-[40px] md:text-5xl lg:text-6xl font-bold mt-[160px] md:mb-8 md:mt-20 text-center md:text-left m-10">
               Galeria de imagenes
             </h1>
             <p className=" text-[3vh] ">
