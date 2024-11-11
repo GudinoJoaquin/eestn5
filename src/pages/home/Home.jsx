@@ -65,10 +65,13 @@ export default function Home() {
         ],
       });
 
-      // Limpiar el canvas después de 2 segundos
+      // Esperar 2 segundos para ver el confetti y luego eliminar el canvas
       setTimeout(() => {
-        jsConfetti.clearCanvas();
-      }, 3000);
+        const confettiCanvas = document.querySelector("canvas");
+        if (confettiCanvas) {
+          confettiCanvas.remove(); // Elimina el canvas del DOM
+        }
+      }, 2000);
     }
   }, [timeRemaining]);
 
