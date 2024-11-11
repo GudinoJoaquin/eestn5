@@ -20,7 +20,7 @@ export default function Home() {
   // jsConfetti.clearCanvas();
 
   useEffect(() => {
-    const targetDate = new Date("2024-11-13T08:30:00").getTime();
+    const targetDate = new Date("2024-11-11T08:30:00").getTime();
 
     const intervalId = setInterval(() => {
       const now = new Date().getTime();
