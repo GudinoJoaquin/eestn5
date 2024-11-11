@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useWindowSize from "../../assets/hooks/useWindowSize";
-import Confetti from "react-confetti";
+// import Confetti from "react-confetti";
 import Parallax from "../../components/Parallax";
 import "../../assets/css/layout.css";
 import Footer from "../../components/Footer";
@@ -53,7 +53,7 @@ export default function Home() {
 
   return (
     <div className="layout">
-      {showConfetti && width > 768 && <Confetti width={width} height={height} recycle={false} />} {/* Renderiza confeti solo cuando showConfetti es true */}
+      {/* {showConfetti && width > 768 && <Confetti width={width} height={height} recycle={false} />} Renderiza confeti solo cuando showConfetti es true */}
       <div className="bg-black">
         <Parallax>
           <TitleHome />
@@ -71,9 +71,7 @@ export default function Home() {
                   <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
                     Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
                     de noviembre
-                    <p className="mt-[10px]">
-                      Faltan: {timeRemaining}
-                    </p>
+                    <p className="mt-[10px]">Faltan: {timeRemaining}</p>
                   </p>
                 )}
               </div>
