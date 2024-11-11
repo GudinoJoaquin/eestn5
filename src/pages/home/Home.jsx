@@ -53,7 +53,7 @@ export default function Home() {
 
   return (
     <div className="layout">
-      {showConfetti && <Confetti width={width} height={height} recycle={false} />} {/* Renderiza confeti solo cuando showConfetti es true */}
+      {showConfetti && width > 768 && <Confetti width={width} height={height} recycle={false} />} {/* Renderiza confeti solo cuando showConfetti es true */}
       <div className="bg-black">
         <Parallax>
           <TitleHome />
