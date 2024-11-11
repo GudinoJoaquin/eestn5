@@ -69,7 +69,7 @@ export default function Galeria() {
       </Parallax>
       <main>
         <div className="bg-white dark:bg-[#2D2D2D] dark:text-white py-10 flex justify-center">
-          <div className="w-full max-w-[80vw] px-5">
+          <div className="w-full max-w-[100vw] px-5">
             <h1 className="text-[25px] font-bold text-center mb-8">
               Galería de Imágenes
             </h1>
