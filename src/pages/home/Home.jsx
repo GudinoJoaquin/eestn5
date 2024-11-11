@@ -16,6 +16,19 @@ import DevsModal from "../../components/DevsModal";
 export default function Home() {
   const [timeRemaining, setTimeRemaining] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   // jsConfetti.clearCanvas();
 
@@ -51,28 +64,31 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (timeRemaining === "¡La ExpoTec 2024 ya ha comenzado!") {
-      const jsConfetti = new JSConfetti();
-
-      jsConfetti.addConfetti({
-        confettiColors: [
-          "#ff0a54",
-          "#ff477e",
-          "#ff7096",
-          "#ff85a1",
-          "#fbb1bd",
-          "#f9bec7",
-        ],
-      });
-
-      // Esperar 2 segundos para ver el confetti y luego eliminar el canvas
-      setTimeout(() => {
-        const confettiCanvas = document.querySelector("canvas");
-        if (confettiCanvas) {
-          confettiCanvas.remove(); // Elimina el canvas del DOM
-        }
-      }, 2000);
+    if(screenWidth >= 768) {
+      if (timeRemaining === "¡La ExpoTec 2024 ya ha comenzado!") {
+        const jsConfetti = new JSConfetti();
+  
+        jsConfetti.addConfetti({
+          confettiColors: [
+            "#ff0a54",
+            "#ff477e",
+            "#ff7096",
+            "#ff85a1",
+            "#fbb1bd",
+            "#f9bec7",
+          ],
+        });
+  
+        // Esperar 2 segundos para ver el confetti y luego eliminar el canvas
+        setTimeout(() => {
+          const confettiCanvas = document.querySelector("canvas");
+          if (confettiCanvas) {
+            confettiCanvas.remove(); // Elimina el canvas del DOM
+          }
+        }, 3000);
+      }
     }
+    
   }, [timeRemaining]);
 
   return (
