@@ -10,17 +10,17 @@ export default function Modal({ img, alt, onClose }) {
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
       onClick={handleOverlayClick}
     >
-      <div className="bg-white rounded-[10px] w-[80vw] flex-col md:flex-row h-auto flex backdrop-brightness-50">
+      <div className="bg-white rounded-[10px] w-[80vw] xl:w-[60vw] flex-col xl:flex-row h-auto xl:h-[70vh] flex backdrop-brightness-50">
         <div className="flex-1">
           <img
             src={img}
             alt={alt}
-            className="h-[100%]"
+            className="h-[100%] rounded-l-[10px]"
             onClick={() => window.open(img, "_blank")}
           />
         </div>
         <div className="text-black flex-1 p-[15px]">
-          <p className="mb-[20px] text-[3vw] border-b-[2px] border-gray-400/50 p-[5px]">
+          <p className="mb-[20px] text-[3vw] xl:text-[1.5vw] border-b-[2px] border-gray-400/50 p-[5px]">
             Fecha: 01/01/01
           </p>
           <p className="text-[16px]">

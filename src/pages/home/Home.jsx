@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import JSConfetti from "js-confetti";
 import Parallax from "../../components/Parallax";
 import "../../assets/css/layout.css";
 import Footer from "../../components/Footer";
@@ -15,6 +16,8 @@ import DevsModal from "../../components/DevsModal";
 export default function Home() {
   const [timeRemaining, setTimeRemaining] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // jsConfetti.clearCanvas();
 
   useEffect(() => {
     const targetDate = new Date("2024-11-13T08:30:00").getTime();
@@ -47,6 +50,21 @@ export default function Home() {
     return () => clearInterval(intervalId);
   }, []);
 
+  if (timeRemaining == "¡La ExpoTec 2024 ya ha comenzado!") {
+    const jsConfetti = new JSConfetti();
+
+    jsConfetti.addConfetti({
+      confettiColors: [
+        "#ff0a54",
+        "#ff477e",
+        "#ff7096",
+        "#ff85a1",
+        "#fbb1bd",
+        "#f9bec7",
+      ],
+    });
+  }
+
   return (
     <div className="layout">
       <div className="bg-black">
@@ -55,14 +73,23 @@ export default function Home() {
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
             <div className="flex justify-center mt-[30px]">
               <div className="xl:w-[400px] xl:h-[150px] w-[300px] h-[80px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center">
-                <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
-                  Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
-                  de noviembre
-                  <p className="mt-[10px]">
-                    Faltan: {}
+                {timeRemaining == "¡La ExpoTec 2024 ya ha comenzado!" ? (
+                  <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
                     {timeRemaining}
+                    <p className="mt-[10px]">
+                      Será los días 13 y 14 de noviembre
+                    </p>
                   </p>
-                </p>
+                ) : (
+                  <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
+                    Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
+                    de noviembre
+                    <p className="mt-[10px]">
+                      Faltan: {}
+                      {timeRemaining}
+                    </p>
+                  </p>
+                )}
               </div>
             </div>
             <Carousel />
@@ -79,7 +106,7 @@ export default function Home() {
                 img={experto}
                 to="/especialidades"
               />
-              <HomeButton text="Galeria" img={anuncio} to="/galeria" />
+              {/* <HomeButton text="Galeria" img={anuncio} to="/galeria" /> */}
             </div>
           </main>
         </Parallax>
