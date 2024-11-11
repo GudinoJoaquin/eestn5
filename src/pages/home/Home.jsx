@@ -50,20 +50,27 @@ export default function Home() {
     return () => clearInterval(intervalId);
   }, []);
 
-  const jsConfetti = new JSConfetti();
-  if (timeRemaining == "¡La ExpoTec 2024 ya ha comenzado!") {
-    jsConfetti.addConfetti({
-      confettiColors: [
-        "#ff0a54",
-        "#ff477e",
-        "#ff7096",
-        "#ff85a1",
-        "#fbb1bd",
-        "#f9bec7",
-      ],
-    });
-  }
-  jsConfetti.clearCanvas();
+  useEffect(() => {
+    if (timeRemaining === "¡La ExpoTec 2024 ya ha comenzado!") {
+      const jsConfetti = new JSConfetti();
+
+      jsConfetti.addConfetti({
+        confettiColors: [
+          "#ff0a54",
+          "#ff477e",
+          "#ff7096",
+          "#ff85a1",
+          "#fbb1bd",
+          "#f9bec7",
+        ],
+      });
+
+      // Limpiar el canvas después de 2 segundos
+      setTimeout(() => {
+        jsConfetti.clearCanvas();
+      }, 3000);
+    }
+  }, [timeRemaining]);
 
   return (
     <div className="layout">
