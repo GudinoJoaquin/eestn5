@@ -36,15 +36,15 @@ export default function Galeria() {
   };
 
   return (
-    <div className="bg-white dark:bg-[#2D2D2D] dark:text-white">
+    <div className="bg-white dark:bg-[#2D2D2D] dark:text-white grid h-[100dvh] grid-rows-[auto_1fr_auto]">
       <Parallax>
         <Nav />
         <header className="text-white flex justify-center items-start h-[90%] mx-[5%] md:mx-[70px] relative">
-          <div className="mt-[250px]">
-            <h1 className="animate-fade-in-right text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-4 md:mb-8 md:mt-20 text-center md:text-left m-10">
+          <div className="mt-[250px] flex flex-col justify-center items-center">
+            <h1 className="animate-fade-in-right text-[30px] md:text-5xl lg:text-6xl font-bold mt-[220px] md:mb-8 md:mt-20 text-center md:text-left m-10">
               Galeria de imagenes
             </h1>
-            <p className="mr-[300px] ml-[20px] text-[2vh]">
+            <p className=" text-[2vh] ">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
               officiis, perferendis dignissimos accusantium assumenda natus aut
               similique placeat non. Cum, excepturi magni enim provident aliquid
@@ -69,13 +69,13 @@ export default function Galeria() {
       </Parallax>
       <main>
         <div className="bg-white dark:bg-[#2D2D2D] dark:text-white py-10 flex justify-center">
-          <div className="w-full max-w-[70vw] px-5">
-            <h1 className="text-4xl font-bold text-center mb-8">
+          <div className="w-full max-w-[80vw] px-5">
+            <h1 className="text-[25px] font-bold text-center mb-8">
               Galería de Imágenes
             </h1>
 
             {/* Bentogrid layout */}
-            <div className="grid grid-cols-4 gap-[22px] mx-auto select-none">
+            <div className="grid grid-cols-2 gap-[22px] mx-auto select-none">
               <Bento
                 img={idi2o}
                 alt="Escuela"
