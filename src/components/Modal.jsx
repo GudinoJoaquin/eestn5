@@ -10,7 +10,7 @@ export default function Modal({ img, alt, onClose }) {
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
       onClick={handleOverlayClick}
     >
-      <div className="bg-white w-[80vw] flex-col md:flex-row h-auto flex backdrop-brightness-50">
+      <div className="bg-white rounded-[10px] w-[80vw] flex-col md:flex-row h-auto flex backdrop-brightness-50">
         <div className="flex-1">
           <img
             src={img}
