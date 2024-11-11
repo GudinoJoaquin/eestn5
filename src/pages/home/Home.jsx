@@ -50,9 +50,8 @@ export default function Home() {
     return () => clearInterval(intervalId);
   }, []);
 
+  const jsConfetti = new JSConfetti();
   if (timeRemaining == "¡La ExpoTec 2024 ya ha comenzado!") {
-    const jsConfetti = new JSConfetti();
-
     jsConfetti.addConfetti({
       confettiColors: [
         "#ff0a54",
@@ -64,6 +63,7 @@ export default function Home() {
       ],
     });
   }
+  jsConfetti.clearCanvas();
 
   return (
     <div className="layout">
