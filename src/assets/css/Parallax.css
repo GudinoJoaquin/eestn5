@@ -16,7 +16,7 @@
 }
 .parallax-home {
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   background: radial-gradient(
       circle,
       rgba(0, 0, 0, 0.664) 100%,
