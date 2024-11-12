@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ReactConfetti from "react-confetti";
+import useWindowSize from "../../assets/hooks/useWindowSize";
 import Parallax from "../../components/Parallax";
 import "../../assets/css/layout.css";
 import Footer from "../../components/Footer";
@@ -15,6 +17,7 @@ import DevsModal from "../../components/DevsModal";
 export default function Home() {
   const [timeRemaining, setTimeRemaining] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { width, height } = useWindowSize();
 
   useEffect(() => {
     const targetDate = new Date("2024-11-13T08:30:00").getTime();
@@ -49,6 +52,7 @@ export default function Home() {
 
   return (
     <div className="layout">
+      <ReactConfetti width={width} height={height} recycle={false}/>
       <div className="bg-black">
         <Parallax>
           <TitleHome />
@@ -79,7 +83,7 @@ export default function Home() {
                 img={experto}
                 to="/especialidades"
               />
-              <HomeButton text="Galeria" img={anuncio} to="/galeria" />
+              {/* <HomeButton text="Galeria" img={anuncio} to="/galeria" /> */}
             </div>
           </main>
         </Parallax>
