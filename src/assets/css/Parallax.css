@@ -31,7 +31,7 @@
   user-select: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .parallax-real {
     background-image: radial-gradient(
         circle,

@@ -51,7 +51,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="grid min-h-screen grid-rows-[200vh_10vh]">
+    <div className="grid min-h-screen grid-rows-[auto_1fr]">
       {timeRemaining == "¡La ExpoTec 2024 ya ha comenzado!" && (
         <ReactConfetti width={width} height={height} recycle={false} />
       )}
