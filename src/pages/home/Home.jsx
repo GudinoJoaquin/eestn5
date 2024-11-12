@@ -20,7 +20,7 @@ export default function Home() {
   const { width, height } = useWindowSize();
 
   useEffect(() => {
-    const targetDate = new Date("2024-11-11T08:30:00").getTime();
+    const targetDate = new Date("2024-11-13T08:30:00").getTime();
 
     const intervalId = setInterval(() => {
       const now = new Date().getTime();
@@ -52,30 +52,22 @@ export default function Home() {
 
   return (
     <div className="layout">
-      {timeRemaining == "¡La ExpoTec 2024 ya ha comenzado!" && (
-        <ReactConfetti width={width} height={height} recycle={false} />
-      )}
+      {timeRemaining == "¡La ExpoTec 2024 ya ha comenzado!" && <ReactConfetti width={width} height={height} recycle={false}/>}
       <div className="bg-black">
         <Parallax>
           <TitleHome />
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
             <div className="flex justify-center mt-[30px]">
               <div className="xl:w-[400px] xl:h-[150px] w-[300px] h-[80px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center">
-                {timeRemaining == "¡La ExpoTec 2024 ya ha comenzado!" ? (
-                  <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
+                
+                <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
+                  Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
+                  de noviembre
+                  <p className="mt-[10px]">
+                    Faltan: {}
                     {timeRemaining}
-                    <p className="mt-[10px]">Sera los días 13 y 14</p>
                   </p>
-                ) : (
-                  <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
-                    Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
-                    de noviembre
-                    <p className="mt-[10px]">
-                      Faltan: {}
-                      {timeRemaining}
-                    </p>
-                  </p>
-                )}
+                </p>
               </div>
             </div>
             <Carousel />
