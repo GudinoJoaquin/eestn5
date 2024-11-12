@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import useWindowSize from "../../assets/hooks/useWindowSize";
-// import Confetti from "react-confetti";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Parallax from "../../components/Parallax";
 import "../../assets/css/layout.css";
 import Footer from "../../components/Footer";
@@ -16,11 +15,9 @@ import DevsModal from "../../components/DevsModal";
 export default function Home() {
   const [timeRemaining, setTimeRemaining] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false); // Estado para controlar el confeti
-  const { width, height } = useWindowSize();
 
   useEffect(() => {
-    const targetDate = new Date("2024-11-11T08:30:00").getTime();
+    const targetDate = new Date("2024-11-13T08:30:00").getTime();
 
     const intervalId = setInterval(() => {
       const now = new Date().getTime();
@@ -29,7 +26,6 @@ export default function Home() {
       if (distance < 0) {
         clearInterval(intervalId);
         setTimeRemaining("¡La ExpoTec 2024 ya ha comenzado!");
-        setShowConfetti(true); // Activa el confeti cuando el tiempo finaliza
       } else {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
@@ -53,27 +49,20 @@ export default function Home() {
 
   return (
     <div className="layout">
-      {/* {showConfetti && width > 768 && <Confetti width={width} height={height} recycle={false} />} Renderiza confeti solo cuando showConfetti es true */}
       <div className="bg-black">
         <Parallax>
           <TitleHome />
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
             <div className="flex justify-center mt-[30px]">
               <div className="xl:w-[400px] xl:h-[150px] w-[300px] h-[80px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center">
-                {timeRemaining === "¡La ExpoTec 2024 ya ha comenzado!" ? (
-                  <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
+                <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
+                  Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
+                  de noviembre
+                  <p className="mt-[10px]">
+                    Faltan: {}
                     {timeRemaining}
-                    <p className="mt-[10px]">
-                      Será los días 13 y 14 de noviembre
-                    </p>
                   </p>
-                ) : (
-                  <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
-                    Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
-                    de noviembre
-                    <p className="mt-[10px]">Faltan: {timeRemaining}</p>
-                  </p>
-                )}
+                </p>
               </div>
             </div>
             <Carousel />
@@ -90,6 +79,7 @@ export default function Home() {
                 img={experto}
                 to="/especialidades"
               />
+              <HomeButton text="Galeria" img={anuncio} to="/galeria" />
             </div>
           </main>
         </Parallax>
