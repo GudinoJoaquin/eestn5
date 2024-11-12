@@ -56,7 +56,7 @@ export default function Home() {
         <ReactConfetti width={width} height={height} recycle={false} />
       )}
       <div className="bg-black">
-        <Parallax>
+        <Parallax parallax="home">
           <TitleHome />
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
             <div className="flex justify-center mt-[30px]">
