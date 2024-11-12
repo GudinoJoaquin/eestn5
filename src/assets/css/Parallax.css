@@ -29,7 +29,7 @@
 @media screen and (min-width: 1280px) and (max-width: 1920px) {
   .parallax-real {
     width: 100%;
-    height: 115vh;
+    height: 200vh;
     background: radial-gradient(
         circle,
         rgba(0, 0, 0, 0.664) 100%,

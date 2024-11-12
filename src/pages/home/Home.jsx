@@ -51,15 +51,16 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="layout">
-      {timeRemaining == "¡La ExpoTec 2024 ya ha comenzado!" && <ReactConfetti width={width} height={height} recycle={false}/>}
+    <div className="grid min-h-screen grid-rows-[auto_1fr]">
+      {timeRemaining == "¡La ExpoTec 2024 ya ha comenzado!" && (
+        <ReactConfetti width={width} height={height} recycle={false} />
+      )}
       <div className="bg-black">
         <Parallax>
           <TitleHome />
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
             <div className="flex justify-center mt-[30px]">
               <div className="xl:w-[400px] xl:h-[150px] w-[300px] h-[80px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center">
-                
                 <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
                   Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
                   de noviembre
