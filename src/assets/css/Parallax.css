@@ -41,7 +41,7 @@
       url("../img/idi2o.jpeg");
   }
   .parallax-home {
-    height: 50vh;
+    height: 200vh;
     background-image: radial-gradient(
         circle,
         rgba(0, 0, 0, 0.664) 100%,
