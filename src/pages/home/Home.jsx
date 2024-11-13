@@ -89,20 +89,12 @@ export default function Home() {
                 </div>
               )}
               <div className="xl:w-[400px] xl:h-[150px] w-[300px] h-[80px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center">
-                {timeRemaining == "¡La ExpoTec 2024 ya ha comenzado!" ? (
-                  <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
-                    {timeRemaining}
-                    <p className="mt-[10px]">
-                      ¡¡Será los días miercoles 13 y jueves 14!!
-                    </p>
+                <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
+                  {timeRemaining}
+                  <p className="mt-[10px]">
+                    ¡¡Será los días miercoles 13 y jueves 14!!
                   </p>
-                ) : (
-                  <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
-                    Se acerca la ExpoTec 2024. Los días miercoles 13 y jueves 14
-                    de noviembre
-                    <p className="mt-[10px]">Faltan {timeRemaining}</p>
-                  </p>
-                )}
+                </p>
               </div>
               {width > 800 && (
                 <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white rounded-[15px] p-[6px] hover:scale-[1.05] transition duration-[.3s]">
