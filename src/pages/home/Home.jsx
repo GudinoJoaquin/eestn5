@@ -59,30 +59,43 @@ export default function Home() {
       )}
       <div className="bg-black">
         <Parallax parallax="home">
-          <div className="flex gap-[20px] p-[15px] items-center">
-            <video
-              src={video}
-              autoPlay
-              muted
-              loop
-              className="w-[100px] h-[100px] rounded-full object-fill bg-black hover:scale-[1.15] transition duration-[.3s]"
-              onClick={() => setIsExpoModalOpen(true)}
-            ></video>
-            <p className="text-white font-semibold text-[12px]">
-              👈 Haz click aqui para ver los horarios de la ExpoTec
-            </p>
-          </div>
+          {width <= 800 && (
+            <div className="flex gap-[20px] p-[15px] items-center">
+              <video
+                src={video}
+                autoPlay
+                muted
+                loop
+                className="w-[100px] h-[100px] rounded-full object-fill bg-black hover:scale-[1.15] transition duration-[.3s]"
+                onClick={() => setIsExpoModalOpen(true)}
+              ></video>
+              <p className="text-white font-semibold text-[12px]">
+                👈 Haz click aqui para ver los horarios de la ExpoTec
+              </p>
+            </div>
+          )}
+
           <TitleHome />
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
-            <div className="flex justify-center mt-[30px]">
+            <div className="flex gap-[200px] justify-center mt-[30px]">
+              {width > 800 && (
+                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white rounded-[15px] p-[6px]">
+                  <img className="w-[350px] rounded-[10px]" src={miercoles} alt="" />
+                </div>
+              )}
               <div className="xl:w-[400px] xl:h-[150px] w-[300px] h-[80px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center">
                 <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
-                    {timeRemaining}
+                  {timeRemaining}
                   <p className="mt-[10px]">
                     ¡¡Sera los días 13 y 14 de noviembre!!
                   </p>
                 </p>
               </div>
+              {width > 800 && (
+                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white rounded-[15px] p-[6px]">
+                  <img className="w-[350px] rounded-[10px]" src={jueves} alt="" />
+                </div>
+              )}
             </div>
             <Carousel />
             <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 xl:mt-[-10px] animate-fade-in-up">
@@ -129,9 +142,7 @@ function ExpoModal({ onClose }) {
       <div className="bg-white rounded-[10px] xl:w-[40vw] w-[80vw] h-auto flex backdrop-brightness-50">
         <div className="text-black flex-1 p-[15px] text-[25px] font-bold">
           <main className="text-[25px] font-bold px-[10px]">
-            <p className="text-center">Miercoles 13</p>
             <img src={miercoles} alt="" />
-            <p className="text-center">Jueves 14</p>
             <img src={jueves} alt="" />
           </main>
         </div>
