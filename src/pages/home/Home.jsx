@@ -97,7 +97,7 @@ export default function Home() {
                 </p>
               </div>
               {width > 800 && (
-                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white rounded-[15px] p-[6px] xl:p-[20px] transition duration-[.3s]">
+                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white h-[] rounded-[15px] p-[6px] xl:p-[20px] transition duration-[.3s]">
                   <img
                     className="w-[350px] rounded-[10px] cursor-pointer"
                     src={jueves}
