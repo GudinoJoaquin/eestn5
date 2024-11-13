@@ -79,7 +79,7 @@ export default function Home() {
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
             <div className="flex gap-[200px] justify-center mt-[30px]">
               {width > 800 && (
-                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white rounded-[15px] p-[6px] hover:scale-[1.05] transition duration-[.3s]">
+                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white rounded-[15px] p-[6px] xl:p-[20px] transition duration-[.3s]">
                   <img
                     className="w-[350px] rounded-[10px] cursor-pointer"
                     src={miercoles}
@@ -88,7 +88,7 @@ export default function Home() {
                   />
                 </div>
               )}
-              <div className="xl:w-[400px] xl:h-[150px] w-[300px] h-[80px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center">
+              <div className="xl:w-[400px] xl:h-[150px] w-[320px] h-[80px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center">
                 <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
                   {timeRemaining}
                   <p className="mt-[10px]">
@@ -97,7 +97,7 @@ export default function Home() {
                 </p>
               </div>
               {width > 800 && (
-                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white rounded-[15px] p-[6px] hover:scale-[1.05] transition duration-[.3s]">
+                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white rounded-[15px] p-[6px] xl:p-[20px] transition duration-[.3s]">
                   <img
                     className="w-[350px] rounded-[10px] cursor-pointer"
                     src={jueves}
