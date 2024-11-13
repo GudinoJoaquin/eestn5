@@ -79,8 +79,13 @@ export default function Home() {
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
             <div className="flex gap-[200px] justify-center mt-[30px]">
               {width > 800 && (
-                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white rounded-[15px] p-[6px]">
-                  <img className="w-[350px] rounded-[10px]" src={miercoles} alt="" />
+                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white rounded-[15px] p-[6px] hover:scale-[1.05] transition duration-[.3s]">
+                  <img
+                    className="w-[350px] rounded-[10px] cursor-pointer"
+                    src={miercoles}
+                    alt=""
+                    onClick={() => window.open(miercoles, "_blank")}
+                  />
                 </div>
               )}
               <div className="xl:w-[400px] xl:h-[150px] w-[300px] h-[80px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center">
@@ -92,8 +97,13 @@ export default function Home() {
                 </p>
               </div>
               {width > 800 && (
-                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white rounded-[15px] p-[6px]">
-                  <img className="w-[350px] rounded-[10px]" src={jueves} alt="" />
+                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white rounded-[15px] p-[6px] hover:scale-[1.05] transition duration-[.3s]">
+                  <img
+                    className="w-[350px] rounded-[10px] cursor-pointer"
+                    src={jueves}
+                    alt=""
+                    onClick={() => window.open(jueves, "_blank")}
+                  />
                 </div>
               )}
             </div>
