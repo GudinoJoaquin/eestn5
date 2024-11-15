@@ -29,8 +29,9 @@ export default function Bento({ img, alt, size, onClick, isModalOpen }) {
       ) : (
         <video
           src={img}
-          controls
+          autoPlay
           loop
+          muted
           onPause={isModalOpen}
           className="w-full h-full object-cover cursor-pointer"
         ></video>

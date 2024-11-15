@@ -22,7 +22,7 @@ export default function Modal({ img, fecha, descripcion, onClose }) {
             <img
               src={img}
               alt={"Escuela"}
-              className="h-full w-full object-cover rounded-l-[10px]"
+              className="h-full w-full max-w-[80vw] object-cover rounded-l-[10px]"
               onClick={() => window.open(img, "_blank")}
             />
           ) : (
@@ -31,7 +31,7 @@ export default function Modal({ img, fecha, descripcion, onClose }) {
               controls
               loop
               autoplay
-              className="w-full h-full object-cover cursor-pointer"
+              className="w-full h-full object-cover cursor-pointer rounded-l-[10px]"
             ></video>
           )}
         </div>
