@@ -42,6 +42,14 @@ export default function Footer({ modal }) {
                 Especialidades
               </Link>
             </li>
+            <li className="relative text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[16px] transition duration-[.3s]">
+              <Link
+                to="../galeria"
+                className="relative text-white decoration-white link-hover before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[1px] before:bg-white before:transition-all before:duration-300 hover:before:left-0 hover:before:w-full"
+              >
+                Galeria
+              </Link>
+            </li>
           </ul>
         </div>
 

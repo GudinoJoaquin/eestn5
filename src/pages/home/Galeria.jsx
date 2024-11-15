@@ -6,6 +6,7 @@ import idi2o from "../../assets/img/idi2o.jpeg";
 import Bento from "../../components/Bento.jsx";
 import Modal from "../../components/Modal.jsx";
 import DevsModal from "../../components/DevsModal.jsx";
+import {IMGS} from "../../assets/utils/IMG.js"; // Importa el JSON
 
 export default function Galeria() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,14 +46,9 @@ export default function Galeria() {
               Galeria de imagenes
             </h1>
             <p className="text-[3vh]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-              officiis, perferendis dignissimos accusantium assumenda natus aut
-              similique placeat non. Cum, excepturi magni enim provident aliquid
-              deserunt harum laboriosam soluta repudiandae.
+              En la galeria de imagenes podras ver las fotos y videos de los eventos más memorables de la escuela y recordar aquellas jornadas 
             </p>
           </div>
-
-          {/* Contenedor de las imágenes Polaroid */}
           {screenWidth >= 738 ? (
             <div className="relative flex mt-[300px]">
               <div
@@ -79,34 +75,16 @@ export default function Galeria() {
             <h1 className="text-[25px] xl:text-[30px] font-bold text-center mb-8">
               Galería de Imágenes
             </h1>
-
-            {/* Bentogrid layout */}
-            <div className="grid grid-cols-2 xl:grid-cols-4 gap-[22px] mx-auto select-none">
-              <Bento
-                img={idi2o}
-                alt="Escuela"
-                size="large"
-                onClick={() => openModal(idi2o)}
-              />
-              <Bento
-                img={idi2o}
-                alt="Escuela"
-                size="medium"
-                onClick={() => openModal(idi2o)}
-              />
-              <Bento
-                img={idi2o}
-                alt="Escuela"
-                size="small"
-                onClick={() => openModal(idi2o)}
-              />
-              <Bento
-                img={idi2o}
-                alt="Escuela"
-                size="small"
-                onClick={() => openModal(idi2o)}
-              />
-              {/* Agrega más Bentos según sea necesario */}
+            <div className="grid grid-cols-2 xl:grid-cols-5 gap-[22px] mx-auto select-none">
+              {IMGS.map((img) => (
+                <Bento
+                  key={img.id}
+                  img={img.img}
+                  size={img.size}
+                  onClick={() => openModal(img)}
+                  isModalOpen={isModalOpen}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -115,11 +93,11 @@ export default function Galeria() {
       {isDevsModalOpen && (
         <DevsModal onClose={() => setIsDevsModalOpen(false)} />
       )}
-
-      {/* Modal */}
       {isModalOpen && (
         <Modal
-          img={modalImage}
+          img={modalImage.img}
+          fecha={modalImage.fecha}
+          descripcion={modalImage.descripcion}
           alt="Imagen de la galería"
           onClose={closeModal}
         />
