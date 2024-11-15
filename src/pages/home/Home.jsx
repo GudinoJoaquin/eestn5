@@ -44,11 +44,34 @@ export default function Home() {
           <TitleHome />
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
             <div className="flex gap-[200px] justify-center mt-[30px]">
-              <div onClick={() => window.location.href = '/#/galeria'} className="xl:w-[400px] xl:h-[150px] w-[300px] h-[80px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center hover:scale-[1.10] transition duration-[.3s] hover:cursor-pointer">
+              {width > 800 && (
+                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white rounded-[15px] p-[6px] xl:p-[20px] transition duration-[.3s]">
+                  <img
+                    className="w-[350px] rounded-[10px] cursor-pointer"
+                    src={miercoles}
+                    alt=""
+                    onClick={() => window.open(miercoles, "_blank")}
+                  />
+                </div>
+              )}
+              <div className="xl:w-[400px] xl:h-[150px] w-[320px] h-[80px] border border-white xl:rounded-[20px] rounded-[10px] flex justify-center items-center">
                 <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
-                  La ExpoTec 2024 ya ha finalizado. Pero podes revivir los mejores momentos en la <b className="underline">Galeria de imagenes</b>
+                  {timeRemaining}
+                  <p className="mt-[10px]">
+                    ¡¡Será los días miercoles 13 y jueves 14!!
+                  </p>
                 </p>
               </div>
+              {width > 800 && (
+                <div className="mt-[-350px] translate-y-[170px] border-[2px] border-white h-[] rounded-[15px] p-[6px] xl:p-[20px] transition duration-[.3s]">
+                  <img
+                    className="w-[350px] rounded-[10px] cursor-pointer"
+                    src={jueves}
+                    alt=""
+                    onClick={() => window.open(jueves, "_blank")}
+                  />
+                </div>
+              )}
             </div>
             <Carousel />
             <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 xl:mt-[-10px] animate-fade-in-up">
