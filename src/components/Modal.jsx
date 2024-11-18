@@ -1,3 +1,5 @@
+import { SlArrowLeftCircle, SlArrowRightCircle } from "react-icons/sl";
+
 export default function Modal({ modalData, onClose, images, setModalData }) {
   const { index, album, fecha, descripcion } = modalData || {};
 
@@ -36,16 +38,16 @@ export default function Modal({ modalData, onClose, images, setModalData }) {
     >
       <div className="bg-white rounded-[10px] w-[80vw] xl:w-auto xl:min-w-[60vw] flex-col xl:flex-row h-auto xl:h-auto xl:min-h-[70vh] xl:max-h-[90vh] flex backdrop-brightness-50">
         {/* Flecha izquierda */}
-        
 
         <div className="flex-1 relative">
-          {images[index]?.url && imageExtensions.some((extension) =>
+          {images[index]?.url &&
+          imageExtensions.some((extension) =>
             images[index].url.toLowerCase().endsWith(extension)
           ) ? (
             <img
               src={images[index].url}
               alt="Escuela"
-              className="h-full w-full max-w-[80vw] object-cover xl:rounded-l-[10px] xl:rounded-r-[0px] rounded-t-[10px]"
+              className="h-full w-full max-w-[70vw] object-cover xl:rounded-l-[10px] xl:rounded-r-[0px] rounded-t-[10px]"
               onClick={() => window.open(images[index].url, "_blank")}
             />
           ) : (
@@ -59,20 +61,6 @@ export default function Modal({ modalData, onClose, images, setModalData }) {
           )}
         </div>
 
-        {/* Flecha derecha */}
-        <button
-          onClick={goToPrevImage}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-70"
-        >
-          &lt;
-        </button>
-        <button
-          onClick={goToNextImage}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-70"
-        >
-          &gt;
-        </button>
-
         <div className="text-black flex-1 p-[15px]">
           <p className="mb-[20px] text-[3vw] xl:text-[1.5vw] border-b-[2px] border-gray-400/50 p-[5px]">
             Fecha: {fecha}
@@ -81,6 +69,18 @@ export default function Modal({ modalData, onClose, images, setModalData }) {
           </p>
           <p className="text-[16px]">{descripcion}</p>
         </div>
+        <button
+          onClick={goToPrevImage}
+          className="absolute left-[-70px] top-1/2 transform -translate-y-1/2 text-white  hover:bg-opacity-70"
+        >
+          <SlArrowLeftCircle size={50} color="white" />
+        </button>
+        <button
+          onClick={goToNextImage}
+          className="absolute right-[-70px] top-1/2 transform -translate-y-1/2 text-white hover:bg-opacity-70"
+        >
+          <SlArrowRightCircle size={50} color="white" />
+        </button>
       </div>
     </div>
   );

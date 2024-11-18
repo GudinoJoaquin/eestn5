@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Nav from "../../components/Nav.jsx";
-import useWindowSize from '../../assets/hooks/useWindowSize.jsx'
+import useWindowSize from "../../assets/hooks/useWindowSize.jsx";
 import Parallax from "../../components/Parallax.jsx";
 import Footer from "../../components/Footer.jsx";
 import idi2o from "../../assets/img/idi2o.jpeg";
@@ -14,7 +14,7 @@ export default function Galeria() {
   const [modalData, setModalData] = useState(null); // Datos completos de la imagen seleccionada
   const { width, height } = useWindowSize();
   const [image, setImage] = useState([]); // Estado para almacenar las imágenes obtenidas
-  const [selectedAlbum, setSelectedAlbum] = useState(''); // Estado para el álbum seleccionado
+  const [selectedAlbum, setSelectedAlbum] = useState(""); // Estado para el álbum seleccionado
   const [selectedDate, setSelectedDate] = useState(""); // Estado para la fecha seleccionada
 
   useEffect(() => {
@@ -105,19 +105,44 @@ export default function Galeria() {
             </h1>
             {/* Selector de álbumes usando radio buttons */}
             <div className="mb-6 flex justify-center space-x-6 select-none">
-              <div onClick={() => setSelectedAlbum("")}>Todos</div>
-              <div onClick={() => setSelectedAlbum("ExpoTec 2024")}>
+              <div
+                onClick={() => setSelectedAlbum("")}
+                className={`border flex flex-col justify-center items-center bg-white dark:bg-[#2D2D2D] text-gray-800 py-2 px-4 md:py-3 md:px-6 rounded-lg transform transition-all duration-300 ${
+                  selectedAlbum === ""
+                    ? "border border-white bg-white text-white scale-105 transition-transform duration-300 dark:text-white"
+                    : "hover:bg-red-100 hover:text-red-700 dark:text-gray-400 border-gray-400"
+                }`}
+              >
+                Todos
+              </div>
+              <div
+                onClick={() => setSelectedAlbum("ExpoTec 2024")}
+                className={`border flex flex-col justify-center items-center bg-white dark:bg-[#2D2D2D] text-gray-800 py-2 px-4 md:py-3 md:px-6 rounded-lg transform transition-all duration-300 ${
+                  selectedAlbum === "ExpoTec 2024"
+                    ? "border border-white bg-white text-white scale-105 transition-transform duration-300 dark:text-white"
+                    : "hover:bg-red-100 hover:text-red-700 dark:text-gray-400 border-gray-400"
+                }`}
+              >
                 ExpoTec 2024
               </div>
-              <div onClick={() => setSelectedAlbum("Kermes")}>Kermés</div>
+              <div
+                onClick={() => setSelectedAlbum("Kermes")}
+                className={`border flex flex-col justify-center items-center bg-white dark:bg-[#2D2D2D] text-gray-800 py-2 px-4 md:py-3 md:px-6 rounded-lg transform transition-all duration-300 ${
+                  selectedAlbum === "Kermes"
+                    ? "border border-white bg-white text-white scale-105 transition-transform duration-300 dark:text-white"
+                    : "hover:bg-red-100 hover:text-red-700 dark:text-gray-400 border-gray-400"
+                }`}
+              >
+                Kermés
+              </div>
             </div>
 
             <div className="grid grid-cols-2 xl:grid-cols-6 gap-[22px] mx-auto select-none">
               {image.length >= 0 ? (
                 image.map((img) => (
-                  <img
+                  <Bento
                     key={img.index}
-                    src={img.url}
+                    img={img.url}
                     onClick={() => openModal(img)} // Pasar datos completos al modal
                     isModalOpen={isModalOpen}
                   />
