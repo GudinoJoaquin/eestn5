@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import Nav from "../../components/Nav.jsx";
 import Parallax from "../../components/Parallax.jsx";
 import Footer from "../../components/Footer.jsx";
-import idi2o from "../../assets/img/idi2o.jpeg"; // Puedes seguir usando esta imagen si lo deseas
-import Bento from "../../components/Bento.jsx"; // Asegúrate de que este componente esté correctamente configurado
+import idi2o from "../../assets/img/idi2o.jpeg";
+import Bento from "../../components/Bento.jsx";
 import Modal from "../../components/Modal.jsx";
 import DevsModal from "../../components/DevsModal.jsx";
 
 export default function Galeria() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDevsModalOpen, setIsDevsModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState(null);
+  const [modalData, setModalData] = useState(null); // Datos completos de la imagen seleccionada
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [image, setImage] = useState([]); // Estado para almacenar las imágenes obtenidas
   const [selectedAlbum, setSelectedAlbum] = useState(""); // Estado para el álbum seleccionado
@@ -32,7 +32,6 @@ export default function Galeria() {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        // Construir la URL con los parámetros de álbum y fecha
         let url = "http://localhost:1234/getImg";
         if (selectedAlbum) {
           url += `?album=${selectedAlbum}`;
@@ -41,9 +40,13 @@ export default function Galeria() {
         const response = await fetch(url);
         const data = await response.json();
         console.log("Datos obtenidos:", data);
-        // Verifica que 'data.images' tenga datos
+
         if (data.images) {
-          setImage(data.images); // Establecer las imágenes obtenidas
+          const imagesWithIndex = data.images.map((img, index) => ({
+            ...img,
+            index, // Agregar índice único a cada imagen
+          }));
+          setImage(imagesWithIndex);
         } else {
           console.log("No se encontraron imágenes.");
         }
@@ -53,16 +56,16 @@ export default function Galeria() {
     };
 
     fetchImages();
-  }, [selectedAlbum, selectedDate]); // Vuelve a cargar las imágenes cuando se cambia el álbum o la fecha seleccionada
+  }, [selectedAlbum, selectedDate]);
 
   const openModal = (img) => {
-    setModalImage(img);
+    setModalData(img); // Establecer los datos de la imagen seleccionada
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setModalImage(null);
+    setModalData(null);
   };
 
   return (
@@ -72,10 +75,10 @@ export default function Galeria() {
         <header className="text-white flex justify-center items-start h-[90%] mx-[5%] md:mx-[70px] relative">
           <div className="flex flex-col justify-center items-center xl:mr-[-50px]">
             <h1 className="animate-fade-in-right text-[40px] md:text-5xl lg:text-6xl font-bold mt-[160px] xl:mt-[300px] md:mb-8 md:mt-20 text-center md:text-left m-10">
-              Galeria de imagenes
+              Galeria de imágenes
             </h1>
             <p className="text-[3vh]">
-              En la galeria de imagenes podras ver las fotos y videos de los
+              En la galería de imágenes podrás ver las fotos y videos de los
               eventos más memorables de la escuela y recordar aquellas jornadas
             </p>
           </div>
@@ -85,7 +88,7 @@ export default function Galeria() {
                 <img src={idi2o} alt="Placeholder 1" className="w-full" />
               </div>
               <div className="bg-white 2xl:p-[16px] p-[16px] 2xl:pb-[70px] pb-[70px] border border-gray-300 shadow-lg transform rotate-[-20deg] 2xl:w-[400px] w-[350px] 2xl:h-[350px] h-[300px] translate-y-[100px] translate-x-[10px]">
-                <img src={idi2o} alt="Placeholder 1" className="w-full" />
+                <img src={idi2o} alt="Placeholder 2" className="w-full" />
               </div>
             </div>
           ) : (
@@ -108,15 +111,13 @@ export default function Galeria() {
               <div onClick={() => setSelectedAlbum("Kermés")}>Kermés</div>
             </div>
 
-            {/* Selector de fecha */}
-
             <div className="grid grid-cols-2 xl:grid-cols-5 gap-[22px] mx-auto select-none">
               {image.length > 0 ? (
-                image.map((img, index) => (
+                image.map((img) => (
                   <Bento
-                    key={index}
+                    key={img.index}
                     img={img.url}
-                    onClick={() => openModal(img)} // Llama a la función de apertura de modal
+                    onClick={() => openModal(img)} // Pasar datos completos al modal
                     isModalOpen={isModalOpen}
                   />
                 ))
@@ -133,10 +134,9 @@ export default function Galeria() {
       )}
       {isModalOpen && (
         <Modal
-          img={modalImage.url}
-          fecha={modalImage.fecha}
-          descripcion={modalImage.descripcion}
-          alt="Imagen de la galería"
+          modalData={modalData} // Pasar todo el objeto modalData
+          images={image} // Pasar las imágenes disponibles si las necesitas
+          setModalData={setModalData}
           onClose={closeModal}
         />
       )}

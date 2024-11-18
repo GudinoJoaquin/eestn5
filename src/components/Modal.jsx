@@ -1,23 +1,35 @@
-export default function Modal({ img, fecha, descripcion, onClose, images, currentIndex, setModalImage }) {
+import { useEffect } from "react";
+
+export default function Modal({ modalData, onClose, images, setModalData }) {
+  const { index, album, fecha, descripcion } = modalData || {};
+
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
   };
 
-  const handleNextImage = (e) => {
-    e.stopPropagation(); // Detener la propagación del clic
-    const nextIndex = (currentIndex + 1) % images.length;
-    setModalImage(images[nextIndex].url); // Actualizar la imagen
+  const imageExtensions = [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp"];
+
+  // Función para cambiar la imagen al siguiente
+  const goToNextImage = () => {
+    if (index < images.length - 1) {
+      setModalData({
+        ...modalData,
+        index: index + 1,
+      });
+    }
   };
 
-  const handlePrevImage = (e) => {
-    e.stopPropagation(); // Detener la propagación del clic
-    const prevIndex = (currentIndex - 1 + images.length) % images.length;
-    setModalImage(images[prevIndex].url); // Actualizar la imagen
+  // Función para cambiar la imagen al anterior
+  const goToPrevImage = () => {
+    if (index > 0) {
+      setModalData({
+        ...modalData,
+        index: index - 1,
+      });
+    }
   };
-
-  const imageExtensions = [".jpg", ".jpeg", "png", ".gif", ".bmp", ".webp"];
 
   return (
     <div
@@ -25,41 +37,49 @@ export default function Modal({ img, fecha, descripcion, onClose, images, curren
       onClick={handleOverlayClick}
     >
       <div className="bg-white rounded-[10px] w-[80vw] xl:w-auto xl:min-w-[60vw] flex-col xl:flex-row h-auto xl:h-auto xl:min-h-[70vh] xl:max-h-[90vh] flex backdrop-brightness-50">
+        {/* Flecha izquierda */}
+        
+
         <div className="flex-1 relative">
-          <button
-            onClick={handlePrevImage} // Acción para mostrar la imagen anterior
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl"
-          >
-            &#8249;
-          </button>
-          {imageExtensions.some((extension) =>
-            img.toLowerCase().endsWith(extension)
+          {images[index]?.url && imageExtensions.some((extension) =>
+            images[index].url.toLowerCase().endsWith(extension)
           ) ? (
             <img
-              src={img}
-              alt={"Escuela"}
-              className="h-full w-full max-w-[80vw] object-cover md:rounded-l-[10px] rounded-t-[10px]"
-              onClick={() => window.open(img, "_blank")}
+              src={images[index].url}
+              alt="Escuela"
+              className="h-full w-full max-w-[80vw] object-cover xl:rounded-l-[10px] xl:rounded-r-[0px] rounded-t-[10px]"
+              onClick={() => window.open(images[index].url, "_blank")}
             />
           ) : (
             <video
-              src={img}
+              src={images[index]?.url}
               controls
               loop
-              autoplay
+              autoPlay
               className="w-full h-full object-cover cursor-pointer md:rounded-l-[10px] rounded-t-[10px]"
             ></video>
           )}
-          <button
-            onClick={handleNextImage} // Acción para mostrar la imagen siguiente
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl"
-          >
-            &#8250;
-          </button>
         </div>
+
+        {/* Flecha derecha */}
+        <button
+          onClick={goToPrevImage}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-70"
+        >
+          &lt;
+        </button>
+        <button
+          onClick={goToNextImage}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-70"
+        >
+          &gt;
+        </button>
+
         <div className="text-black flex-1 p-[15px]">
           <p className="mb-[20px] text-[3vw] xl:text-[1.5vw] border-b-[2px] border-gray-400/50 p-[5px]">
             Fecha: {fecha}
+            <br />
+            {album}
           </p>
           <p className="text-[16px]">{descripcion}</p>
         </div>
