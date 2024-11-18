@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 export default function Modal({ modalData, onClose, images, setModalData }) {
   const { index, album, fecha, descripcion } = modalData || {};
 

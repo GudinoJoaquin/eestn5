@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Nav from "../../components/Nav.jsx";
+import useWindowSize from '../../assets/hooks/useWindowSize.jsx'
 import Parallax from "../../components/Parallax.jsx";
 import Footer from "../../components/Footer.jsx";
 import idi2o from "../../assets/img/idi2o.jpeg";
@@ -11,7 +12,7 @@ export default function Galeria() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDevsModalOpen, setIsDevsModalOpen] = useState(false);
   const [modalData, setModalData] = useState(null); // Datos completos de la imagen seleccionada
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const { width, height } = useWindowSize();
   const [image, setImage] = useState([]); // Estado para almacenar las imágenes obtenidas
   const [selectedAlbum, setSelectedAlbum] = useState(''); // Estado para el álbum seleccionado
   const [selectedDate, setSelectedDate] = useState(""); // Estado para la fecha seleccionada
@@ -82,7 +83,7 @@ export default function Galeria() {
               eventos más memorables de la escuela y recordar aquellas jornadas
             </p>
           </div>
-          {screenWidth >= 738 ? (
+          {width >= 738 ? (
             <div className="relative flex mt-[300px]">
               <div className="bg-white 2xl:p-[16px] p-[16px] 2xl:pb-[70px] pb-[70px] border border-gray-300 shadow-lg transform rotate-[20deg] 2xl:w-[400px] w-[350px] 2xl:h-[350px] h-[300px] translate-y-[-120px] translate-x-[130px]">
                 <img src={idi2o} alt="Placeholder 1" className="w-full" />
@@ -111,12 +112,12 @@ export default function Galeria() {
               <div onClick={() => setSelectedAlbum("Kermes")}>Kermés</div>
             </div>
 
-            <div className="grid grid-cols-2 xl:grid-cols-5 gap-[22px] mx-auto select-none">
+            <div className="grid grid-cols-2 xl:grid-cols-6 gap-[22px] mx-auto select-none">
               {image.length >= 0 ? (
                 image.map((img) => (
-                  <Bento
+                  <img
                     key={img.index}
-                    img={img.url}
+                    src={img.url}
                     onClick={() => openModal(img)} // Pasar datos completos al modal
                     isModalOpen={isModalOpen}
                   />

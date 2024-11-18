@@ -15,7 +15,7 @@ export default function Bento({ img, alt, size, onClick, isModalOpen }) {
 
   return (
     <div
-      className={`overflow-hidden rounded-lg shadow-lg ${sizeClasses}`}
+      className={`overflow-hidden rounded-lg shadow-lg col-span-2 row-span-2`}
       onClick={() => onClick(img, alt)}
     >
       {imageExtensions.some((extension) =>
