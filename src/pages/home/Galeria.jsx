@@ -13,7 +13,7 @@ export default function Galeria() {
   const [modalData, setModalData] = useState(null); // Datos completos de la imagen seleccionada
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [image, setImage] = useState([]); // Estado para almacenar las imágenes obtenidas
-  const [selectedAlbum, setSelectedAlbum] = useState("Sin album"); // Estado para el álbum seleccionado
+  const [selectedAlbum, setSelectedAlbum] = useState(''); // Estado para el álbum seleccionado
   const [selectedDate, setSelectedDate] = useState(""); // Estado para la fecha seleccionada
 
   useEffect(() => {
@@ -108,11 +108,11 @@ export default function Galeria() {
               <div onClick={() => setSelectedAlbum("ExpoTec 2024")}>
                 ExpoTec 2024
               </div>
-              <div onClick={() => setSelectedAlbum("Kermés")}>Kermés</div>
+              <div onClick={() => setSelectedAlbum("Kermes")}>Kermés</div>
             </div>
 
             <div className="grid grid-cols-2 xl:grid-cols-5 gap-[22px] mx-auto select-none">
-              {image.length > 0 ? (
+              {image.length >= 0 ? (
                 image.map((img) => (
                   <Bento
                     key={img.index}
