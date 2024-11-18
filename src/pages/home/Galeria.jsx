@@ -103,7 +103,7 @@ export default function Galeria() {
               Galería de Imágenes
             </h1>
             {/* Selector de álbumes usando radio buttons */}
-            <div className="mb-6 flex justify-center space-x-6">
+            <div className="mb-6 flex justify-center space-x-6 select-none">
               <div onClick={() => setSelectedAlbum("")}>Todos</div>
               <div onClick={() => setSelectedAlbum("ExpoTec 2024")}>
                 ExpoTec 2024
