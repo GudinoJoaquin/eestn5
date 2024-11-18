@@ -13,7 +13,7 @@ export default function Galeria() {
   const [modalData, setModalData] = useState(null); // Datos completos de la imagen seleccionada
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [image, setImage] = useState([]); // Estado para almacenar las imágenes obtenidas
-  const [selectedAlbum, setSelectedAlbum] = useState(""); // Estado para el álbum seleccionado
+  const [selectedAlbum, setSelectedAlbum] = useState("Sin album"); // Estado para el álbum seleccionado
   const [selectedDate, setSelectedDate] = useState(""); // Estado para la fecha seleccionada
 
   useEffect(() => {
