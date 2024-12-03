@@ -24,14 +24,6 @@ export default function Home() {
 
           <TitleHome />
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
-            <div className="flex gap-[200px] justify-center mt-[30px]">
-              
-              <div onClick={() => window.location.href = '/#/galeria'} className="xl:w-[400px] xl:h-[150px] w-[320px] h-[80px] border border-white xl:rounded-[20px] rounded-[10px] hover:scale-[1.10] flex justify-center items-center transition duration-[.3s] hover:cursor-pointer">
-                <p className="text-white text-center xl:text-[20px] text-[12px] font-semibold">
-                  La ExpoTec 2024 ya ha terminado, pero podes revivir los mejores momentos en la <b className="underline">Galeria de imagenes</b>
-                </p>
-              </div>
-            </div>
             <Carousel />
             <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 xl:mt-[-10px] animate-fade-in-up">
               <HomeButton
