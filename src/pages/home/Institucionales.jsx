@@ -7,7 +7,7 @@ import DevsModal from "../../components/DevsModal";
 export default function Institucionales() {
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-      setIsHidden("hidden")
+      setIsHidden("hidden");
     }
   };
 
@@ -37,15 +37,15 @@ export default function Institucionales() {
         <Nav />
         <header className="text-white flex flex-col justify-center items-center h-[100%] mx-4 md:mx-[70px]"></header>
       </Parallax>
-      <main className="mt-8 mx-[30px] xl:mx-[70px] md:mt-24 lg:grid grid-col-6">
+      <main className="mt-8 mx-[30px] xl:mx-[70px] md:mt-24">
         <aside
-          className="border border-gray-700 rounded-[5px] w-[20%] mb-[50px] h-auto p-[5px] transition-all duration-[.3s] lg:col-span-2 absolute dark:bg-[#343434]"
+          className="border border-gray-700 rounded-[5px] w-[30%] mb-[50px] h-auto p-[5px] transition-all duration-[.3s] absolute bg-white dark:bg-[#343434] translate-y-[-60px]"
           onClick={() => setIsHidden(isHidden ? "" : "hidden")}
         >
           <div className="p-[3px]">{month}</div>
           {meses.map((mes, index) => (
             <div
-              className={`${isHidden} border-t border-gray-500 p-[3px] transition-all duration-[.3s]`}
+              className={`${isHidden} border-t border-gray-500 p-[3px] transition-all duration-[.2s] hover:bg-gray-400/75 dark:hover:bg-[#282828]`}
               key={index}
               onClick={() => setMonth(mes)}
             >
@@ -53,7 +53,7 @@ export default function Institucionales() {
             </div>
           ))}
         </aside>
-        <section className="lg:col-span-4 w-full mb-[20px] mt-[90px]">
+        <section className=" w-full mb-[20px] mt-[90px]">
           {cantidad.map((elemento) => (
             <article
               key={elemento}
@@ -67,7 +67,7 @@ export default function Institucionales() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
                 autem porro unde perferendis earum vero
               </p>
-              <p className="text-sky-900 dark:text-sky-300 underline">
+              <p className="text-sky-900 hover:text-blue-700 dark:text-sky-300 dark:hover:text-blue-500 cursor-pointer underline transition duration-[.2s]">
                 Ver PDF
               </p>
             </article>
