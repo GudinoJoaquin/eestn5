@@ -5,11 +5,18 @@ import Footer from "../../components/Footer";
 import DevsModal from "../../components/DevsModal";
 
 export default function Institucionales() {
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setIsHidden("hidden")
+    }
+  };
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isHidden, setIsHidden] = useState("hidden");
   const [month, setMonth] = useState("Todo");
   const cantidad = [1, 2, 3, 4, 5, 6];
   const meses = [
+    "Todo",
     "Enero",
     "Febrero",
     "Marzo",
@@ -30,9 +37,9 @@ export default function Institucionales() {
         <Nav />
         <header className="text-white flex flex-col justify-center items-center h-[100%] mx-4 md:mx-[70px]"></header>
       </Parallax>
-      <main className="mt-8 mx-[30px] md:mt-24">
+      <main className="mt-8 mx-[30px] xl:mx-[70px] md:mt-24 lg:grid grid-col-6">
         <aside
-          className="border border-gray-700 rounded-[10px] w-full mb-[50px] h-auto p-[5px] transition-all duration-[.3s]"
+          className="border border-gray-700 rounded-[5px] w-[20%] mb-[50px] h-auto p-[5px] transition-all duration-[.3s] lg:col-span-2 absolute dark:bg-[#343434]"
           onClick={() => setIsHidden(isHidden ? "" : "hidden")}
         >
           <div className="p-[3px]">{month}</div>
@@ -46,7 +53,7 @@ export default function Institucionales() {
             </div>
           ))}
         </aside>
-        <section className="col-span-4 w-full mb-[20px]">
+        <section className="lg:col-span-4 w-full mb-[20px] mt-[90px]">
           {cantidad.map((elemento) => (
             <article
               key={elemento}
@@ -60,7 +67,9 @@ export default function Institucionales() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
                 autem porro unde perferendis earum vero
               </p>
-              <p className="text-sky-300 underline">Ver PDF</p>
+              <p className="text-sky-900 dark:text-sky-300 underline">
+                Ver PDF
+              </p>
             </article>
           ))}
         </section>
