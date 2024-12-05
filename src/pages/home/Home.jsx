@@ -10,6 +10,7 @@ import comunicar from "../../assets/img/comunicar.svg";
 import anuncio from "../../assets/img/anuncio-publicitario (1).svg";
 import equipo from "../../assets/img/equipo.svg";
 import experto from "../../assets/img/experto.svg";
+import document from "../../assets/img/documento.png";
 import Carousel from "../../components/Carousel";
 import DevsModal from "../../components/DevsModal";
 
@@ -21,7 +22,6 @@ export default function Home() {
     <div className="grid min-h-screen grid-rows-[auto_1fr]">
       <div className="bg-black">
         <Parallax parallax="home">
-
           <TitleHome />
           <main className="mt-[10vw] xl:mt-0 2xl:mt-0">
             <Carousel />
@@ -38,7 +38,11 @@ export default function Home() {
                 img={experto}
                 to="/especialidades"
               />
-              <HomeButton text="Galeria" img={anuncio} to="/galeria" />
+              <HomeButton
+                text="Institucionales"
+                img={document}
+                to="/institucionales"
+              />
             </div>
           </main>
         </Parallax>

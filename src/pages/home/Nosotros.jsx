@@ -19,7 +19,6 @@ import l4b from "../../assets/img/l4b.svg";
 
 export default function Nosotros() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const contentRef = useRef(null);
 
   const handleClick = () => {
@@ -94,12 +93,14 @@ export default function Nosotros() {
                 en informática, electrónica y construcciones.
               </p>
             </div>
-            <div className="hidden md:flex flex-1 justify-center items-center animate-fade-in-left">
-              <img
-                src={imagen}
-                alt=""
-                className="w-9/12 h-auto rounded-2xl transition duration-300"
-              />
+            <div className="hidden md:flex md:flex-col flex-1 justify-center items-center animate-fade-in-left">
+              <img src={imagen} alt="" className="w-9/12 h-auto rounded-2xl" />
+              <Link
+                to="../galeria"
+                className="bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 text-md md:text-lg font-medium translate-y-[25px] text-white py-2 px-6 md:px-8 rounded-md shadow-md transition duration-300 hover:bg-red-950"
+              >
+                Ver galeria de imagenes
+              </Link>
             </div>
           </section>
         </InScroll>
