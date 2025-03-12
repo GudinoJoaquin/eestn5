@@ -29,7 +29,7 @@ export default function Nosotros() {
 
   return (
     <body className="bg-white dark:bg-[#2D2D2D] dark:text-white">
-      <Parallax parallax="img">
+      <Parallax>
         <Nav />
         <header className="text-white flex flex-col justify-center items-center h-[100%] mx-4 md:mx-[70px]">
           <h1 className="text-[25px] sm:text-[30px] md:text-[40px] lg:text-[50px] xl:text-[60px] 2xl:text-[70px] font-bold animate-fade-in-down">
