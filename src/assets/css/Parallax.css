@@ -6,7 +6,7 @@
       rgba(0, 0, 0, 0.664) 100%,
       rgba(255, 255, 255, 0) 100%
     ),
-    url("../img/eestn5_1.jpg");
+    url("../img/eestn5_4.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -22,7 +22,7 @@
       rgba(0, 0, 0, 0.664) 100%,
       rgba(255, 255, 255, 0) 100%
     ),
-    url("../img/eestn5_1.jpg");
+    url("../img/eestn5_4.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -38,7 +38,7 @@
         rgba(0, 0, 0, 0.664) 100%,
         rgba(255, 255, 255, 0) 100%
       ),
-      url("../img/eestn5_1.jpeg");
+      url("../img/eestn5_2.jpg");
   }
   .parallax-home {
     width: 100%;
@@ -48,7 +48,7 @@
         rgba(0, 0, 0, 0.664) 100%,
         rgba(255, 255, 255, 0) 100%
       ),
-      url("../img/eestn5_1.jpeg");
+      url("../img/eestn5_2.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -67,7 +67,7 @@
         rgba(0, 0, 0, 0.664) 100%,
         rgba(255, 255, 255, 0) 100%
       ),
-      url("../img/eestn5_1.jpeg");
+      url("../img/eestn5_3.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -83,7 +83,7 @@
         rgba(0, 0, 0, 0.664) 100%,
         rgba(255, 255, 255, 0) 100%
       ),
-      url("../img/eestn5_1.jpeg");
+      url("../img/eestn5_3.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -101,7 +101,7 @@
       rgba(0, 0, 0, 0.664) 100%,
       rgba(255, 255, 255, 0) 100%
     ),
-    url("../img/escuela-fondo.webp");
+    url("../img/eestn5_3.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -117,6 +117,6 @@
         rgba(0, 0, 0, 0.664) 100%,
         rgba(255, 255, 255, 0) 100%
       ),
-      url("../img/escuela-fondo.webp");
+      url("../img/eestn5_2.jpg");
   }
 }

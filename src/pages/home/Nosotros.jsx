@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Parallax from "../../components/Parallax";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
-import imagen from "../../assets/img/idi2_OLD-D4B2EUtT (1) (1).jpeg";
+import imagen from "../../assets/img/eestn5_3.jpg";
 import DevsModal from "../../components/DevsModal";
 
 import InScroll from "../../logic/inScroll";
