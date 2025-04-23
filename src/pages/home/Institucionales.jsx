@@ -8,7 +8,7 @@ import video from "../../assets/img/regimen académico por estudiantes 3.mp4";
 
 export default function Institucionales() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isHidden, setIsHidden] = useState("hidden");
+  const [section, setSection] = useState("ai");
 
   const handleClick = () => {
     contentRef.current.scrollIntoView({ behavior: "smooth" });
@@ -44,22 +44,68 @@ export default function Institucionales() {
           </div>
         </header>
       </Parallax>
-      <main className="mt-8 mx-[30px] xl:mx-[70px] md:mt-24">
-        {/* <aside
-          className="border border-gray-700 rounded-[5px] w-[30%] mb-[50px] h-auto p-[5px] transition-all duration-[.3s] absolute bg-white dark:bg-[#343434] translate-y-[-60px]"
-          onClick={() => setIsHidden(isHidden ? "" : "hidden")}
-        >
-          <div className="p-[3px]">{month}</div>
-          {meses.map((mes, index) => (
-            <div
-              className={`${isHidden} border-t border-gray-500 p-[3px] transition-all duration-[.2s] hover:bg-gray-400/75 dark:hover:bg-[#282828]`}
-              key={index}
-              onClick={() => setMonth(mes)}
-            >
-              {mes}
-            </div>
-          ))}
-        </aside> */}
+      <main className="lg:flex lg:ml-[100px]">
+        <section className="flex justify-center lg:hidden mt-[50px]">
+          <select
+            value={section}
+            onChange={(e) => setSection(e.target.value)}
+            className="text-[20px] bg-white border border-[#2D2D2D] dark:bg-[#2D2D2D] dark:text-white dark:border-white px-[10px] py-[5px] rounded-[5px]"
+          >
+            <option className="" value="ai">Acuerdo institucional</option>
+            <option className="" value="ra">Regimen Academico</option>
+          </select>
+        </section>
+        <aside className="hidden lg:flex flex-col mt-[40px] ">
+          <p className="text-nowrap underline hover:text-red-500 transition duration-[.3s] cursor-pointer" onClick={() => setSection("ai")}>Acuerdo institucional</p>
+          <p className="text-nowrap underline hover:text-red-500 transition duration-[.3s] cursor-pointer" onClick={() => setSection("ra")}>Regimen academico</p>
+        </aside>
+
+        {section === "ra" ? (
+          <main className="mt-8 mx-[30px] xl:mx-[70px] md:mt-24 lg:mt-[40px]">
+            <section className=" w-full mb-[20px]">
+              <article className="mb-[50px] border-b-2 pb-[30px] border-gray-600/50">
+                <h2 className="font-medium mb-[5px] lg:text-[25px]">5/12/24</h2>
+                <h2 className="font-bold mb-[10px] text-[25px] lg:text-[30px]">
+                  Nuevo regimen academico
+                </h2>
+                <p className="mb-[10px] lg:text-[24px]">
+                  Dejamos a disposición la información sobre el nuevo régimen
+                  académico y videos explicativos hechos por alumnos que
+                  ayudarán a entender lo que entrará en vigencia a partir del
+                  próximo año.
+                </p>
+                <div className="grid place-items-center">
+                  <video src={video} controls autoPlay></video>
+                </div>
+              </article>
+            </section>
+          </main>
+        ) : (
+          <main className="flex flex-col items-center mt-[40px]">
+            <h2 className="mb-[20px] font-bold text-[30px]">Acuerdo institucional</h2>
+            <p className="mx-[60px] my-[10px] text-center lg:text-wrap lg:text-left">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+              rerum error similique? At neque fugiat excepturi iusto eum
+              molestiae eaque. Quasi sit, placeat consequatur quas nostrum
+              accusantium illum vitae at.
+            </p>
+            <p className="mx-[60px] my-[10px] text-center lg:text-wrap lg:text-left">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+              rerum error similique? At neque fugiat excepturi iusto eum
+              molestiae eaque. Quasi sit, placeat consequatur quas nostrum
+              accusantium illum vitae at.
+            </p>
+            <p className="mx-[60px] my-[10px] text-center lg:text-wrap lg:text-left">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+              rerum error similique? At neque fugiat excepturi iusto eum
+              molestiae eaque. Quasi sit, placeat consequatur quas nostrum
+              accusantium illum vitae at.
+            </p>
+          </main>
+        )}
+      </main>
+
+      {/* <main className="mt-8 mx-[30px] xl:mx-[70px] md:mt-24">
           <section className=" w-full mb-[20px] mt-[90px]">
             <article className="mb-[50px] border-b-2 pb-[30px] border-gray-600/50">
               <h2 className="font-medium mb-[5px] lg:text-[25px]">5/12/24</h2>
@@ -76,7 +122,7 @@ export default function Institucionales() {
               </div>
             </article>
           </section>
-      </main>
+      </main> */}
       <Footer modal={(estado) => setIsModalOpen(estado)} />
       {isModalOpen && <DevsModal onClose={() => setIsModalOpen(false)} />}
     </body>
