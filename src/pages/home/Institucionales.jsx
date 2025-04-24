@@ -11,7 +11,7 @@ export default function Institucionales() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const sec = queryParams.get("sec") || "ai";
+  const sec = queryParams.get("seccion") || "ai";
   const [section, setSection] = useState(sec);
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ export default function Institucionales() {
   };
 
   useEffect(() => {
-    navigate(`/institucionales?sec=${section}`);
+    navigate(`/institucionales?seccion=${section}`);
   }, [section]);
 
   return (
@@ -71,13 +71,13 @@ export default function Institucionales() {
         <aside className="hidden lg:flex flex-col mt-[40px] ">
           <p
             className="text-nowrap underline hover:text-red-500 transition duration-[.3s] cursor-pointer"
-            onClick={() => navigate("/institucionales?sec=ai")}
+            onClick={() => navigate("/institucionales?seccion=acuerdo-institucional")}
           >
             Acuerdo institucional
           </p>
           <p
             className="text-nowrap underline hover:text-red-500 transition duration-[.3s] cursor-pointer"
-            onClick={() => navigate("/institucionales?sec=ra")}
+            onClick={() => navigate("/institucionales?seccion=regimen-academico")}
           >
             Regimen academico
           </p>
