@@ -60,10 +60,10 @@ export default function Institucionales() {
             onChange={(e) => setSection(e.target.value)}
             className="text-[20px] bg-white border border-[#2D2D2D] dark:bg-[#2D2D2D] dark:text-white dark:border-white px-[10px] py-[5px] rounded-[5px]"
           >
-            <option className="" value="ai">
+            <option className="" value="acuerdo-institucional">
               Acuerdo institucional
             </option>
-            <option className="" value="ra">
+            <option className="" value="regimen-academico">
               Regimen Academico
             </option>
           </select>
