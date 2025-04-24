@@ -7,6 +7,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import video from "../../assets/img/regimen académico por estudiantes 3.mp4";
 
+import Presentacion from "../../sections/Presentacion.jsx";
+import MarcoLegal from "../../sections/MarcoLegal.jsx";
+
 export default function Institucionales() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
@@ -53,7 +56,7 @@ export default function Institucionales() {
           </div>
         </header>
       </Parallax>
-      <main className="lg:flex lg:ml-[100px]">
+      <main className="lg:flex lg:ml-[100px] mb-[100px]">
         <section className="flex justify-center lg:hidden mt-[50px]">
           <select
             value={section}
@@ -68,9 +71,9 @@ export default function Institucionales() {
             </option>
           </select>
         </section>
-        <aside className="hidden lg:flex flex-col mt-[40px] ">
+        <aside className="hidden lg:flex flex-col mt-[40px] gap-[10px]">
           <p
-            className="text-nowrap underline hover:text-red-500 transition duration-[.3s] cursor-pointer"
+            className={`underline underline-offset-4 ${sec === 'acuerdo-institucional' ? 'text-red-500' : 'text-white/40'} text-nowrap text-[20px] hover:text-red-500 transition duration-[.3s] cursor-pointer`}
             onClick={() =>
               navigate("/institucionales?seccion=acuerdo-institucional")
             }
@@ -78,7 +81,7 @@ export default function Institucionales() {
             Acuerdo institucional
           </p>
           <p
-            className="text-nowrap underline hover:text-red-500 transition duration-[.3s] cursor-pointer"
+            className={`underline underline-offset-4 ${sec === 'regimen-academico' ? 'text-red-500' : 'text-white/40'} text-nowrap text-[20px] hover:text-red-500 transition duration-[.3s] cursor-pointer`}
             onClick={() =>
               navigate("/institucionales?seccion=regimen-academico")
             }
@@ -87,8 +90,10 @@ export default function Institucionales() {
           </p>
         </aside>
 
+        <div className="hidden lg:flex w-[2px] h-[450px] bg-white/40 ml-[120px] mt-[40px]"/>
+
         {sec === "regimen-academico" ? (
-          <main className="mt-8 mx-[30px] xl:mx-[70px] md:mt-24 lg:mt-[40px]">
+          <main className="mt-8 mx-[30px] xl:mx-[70px] md:mt-24 lg:mt-[40px] animate-fade-in-left">
             <section className=" w-full mb-[20px]">
               <article className="mb-[50px] border-b-2 pb-[30px] border-gray-600/50">
                 <h2 className="font-medium mb-[5px] lg:text-[25px]">5/12/24</h2>
@@ -108,80 +113,13 @@ export default function Institucionales() {
             </section>
           </main>
         ) : (
-          <main className="flex flex-col items-center mt-[40px]">
-            <h2 className="mb-[20px] font-bold text-[30px]">
+          <main className="flex flex-col items-center mt-[40px] animate-fade-in-right">
+            <h2 className="mb-[20px] font-bold text-[30px] lg:text-[40px]">
               Acuerdo institucional
             </h2>
-            <section className="flex flex-col mx-[30px]">
-              <h2 className="font-semibold text-[25px]">Presentación</h2>
-              <div className="my-[10px] text-left indent-4  lg:text-wrap lg:text-left flex flex-col gap-[20px]">
-                <p>
-                  La educación técnico profesional introduce a los estudiantes,
-                  jóvenes y adultos, en un recorrido de profesionalización a
-                  partir del acceso a una base de conocimientos y de habilidades
-                  profesionales que les permita su inserción en áreas
-                  ocupacionales cuya complejidad exige haber adquirido una
-                  formación general, una cultura científica tecnológica
-                  profesional, así como continuar aprendiendo durante toda su
-                  vida.
-                </p>
-                <p>
-                  A las familias, docentes y estudiantes del Establecimiento
-                </p>
-                <p>
-                  La redacción de este AIC sostiene en primer lugar la finalidad
-                  educativa, como referente principal de las normas internas de
-                  esta institución. Es objetivo de la misma educar para el
-                  crecimiento personal y la participación responsable de los
-                  estudiantes, favoreciendo elejercicio de la libertad, el
-                  compromiso, el dialogo y la valoración de las diferencias. La
-                  Resolución 1709/09 de la Provincia de Buenos Aires proporciona
-                  un nuevo intento para la transformación educativa: valorar a
-                  la escuela como unidad que reflexiona sobre sus problemas y
-                  que tiene la facultad de diseñar estrategias de resolución.
-                  Mediante el trabajo en equipo que prioriza las cuestiones
-                  pedagógicas, la Institución genera mecanismos que mejores los
-                  aprendizajes de todos los estudiantes y un clima de
-                  convivencia democrática,{" "}
-                  <strong>
-                    {" "}
-                    promoviendo que todos son sujetos de respecto.
-                  </strong>
-                </p>
-                <p>
-                  El proceso de elaboración y puesta en marcha del AIC requiere
-                  de una cultura de colaboración entre quienes participan como
-                  integrantes de la comunidad educativa. En este sentido, el
-                  trabajo en equipo adquiere un valor fundamental como
-                  herramienta de intercambio entre personas: adolescentes,
-                  jóvenes y adultos que buscan arribar a acuerdos. Los
-                  principios fundacionales de este AIC son:{" "}
-                  <strong> Cooperativismo y solidaridad: </strong> es necesario
-                  aprender a trabajar juntos, sumando esfuerzos y compartir con
-                  los demás, ejerciendo la confianza y la ayuda mutua.
-                </p>
-                <p>
-                  <strong>Comunicación: </strong> los miembros de la comunidad,
-                  jóvenes y adultos, deben aprender a observar cuidadosamente, a
-                  comunicarse con precisión y a escuchar sensiblemente. Aprecio
-                  por la diversidad: aprender a respetar y apreciar las
-                  diferencias entre personas
-                </p>
-                <p>
-                  <strong>Expresión positiva de las emociones:</strong> aprender
-                  a expresar los sentimientos a partirdel autocontrol,
-                  encauzando la ira, el enfado y la frustración hacia las formas
-                  no agresivas ni destructivas
-                </p>
-                <p>
-                  <strong>Resolución de situaciones conflictivas: </strong>
-                  aprender a responder creativamente a lascuestiones planteadas
-                  en el contexto de una comunidad solidaria y de apoyo. Este
-                  aprendizaje cooperativo implica para los jóvenes no solo
-                  aprender contenidos, sinoaprender a relacionarse con el otro
-                  en un clima de respeto y participación
-                </p>
-              </div>
+            <section className="flex flex-col gap-[60px]">
+              <Presentacion />
+              <MarcoLegal />
             </section>
           </main>
         )}
