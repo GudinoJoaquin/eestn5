@@ -19,9 +19,9 @@ export default function Institucionales() {
     contentRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  // useEffect(() => {
-  //   navigate(`/institucionales?seccion=${section}`);
-  // }, [section]);
+  useEffect(() => {
+    navigate(`/institucionales?seccion=${section}`);
+  }, [section]);
 
   return (
     <body className="bg-white dark:bg-[#2D2D2D] dark:text-white">
