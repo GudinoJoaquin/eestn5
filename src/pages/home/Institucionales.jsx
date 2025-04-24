@@ -11,7 +11,7 @@ export default function Institucionales() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const sec = queryParams.get("seccion") || "ai";
+  const sec = queryParams.get("seccion") || "acuerdo-institucional";
   const [section, setSection] = useState(sec);
   const navigate = useNavigate();
 
@@ -19,9 +19,9 @@ export default function Institucionales() {
     contentRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(() => {
-    navigate(`/institucionales?seccion=${section}`);
-  }, [section]);
+  // useEffect(() => {
+  //   navigate(`/institucionales?seccion=${section}`);
+  // }, [section]);
 
   return (
     <body className="bg-white dark:bg-[#2D2D2D] dark:text-white">
@@ -71,19 +71,23 @@ export default function Institucionales() {
         <aside className="hidden lg:flex flex-col mt-[40px] ">
           <p
             className="text-nowrap underline hover:text-red-500 transition duration-[.3s] cursor-pointer"
-            onClick={() => navigate("/institucionales?seccion=acuerdo-institucional")}
+            onClick={() =>
+              navigate("/institucionales?seccion=acuerdo-institucional")
+            }
           >
             Acuerdo institucional
           </p>
           <p
             className="text-nowrap underline hover:text-red-500 transition duration-[.3s] cursor-pointer"
-            onClick={() => navigate("/institucionales?seccion=regimen-academico")}
+            onClick={() =>
+              navigate("/institucionales?seccion=regimen-academico")
+            }
           >
             Regimen academico
           </p>
         </aside>
 
-        {sec === "ra" ? (
+        {sec === "regimen-academico" ? (
           <main className="mt-8 mx-[30px] xl:mx-[70px] md:mt-24 lg:mt-[40px]">
             <section className=" w-full mb-[20px]">
               <article className="mb-[50px] border-b-2 pb-[30px] border-gray-600/50">
