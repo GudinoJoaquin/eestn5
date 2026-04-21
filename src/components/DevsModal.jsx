@@ -31,7 +31,7 @@ export default function DevsModal({ onClose }) {
               />
               <CreadoresSection
                 creator="Facundo Cientofante"
-                github="https://github.com/FacundoCien"
+                github="https://github.com/Cienttos"
                 ariaLabel="Facundo Cientofante's Github"
                 tooltipContent="Cientofante's Github"
               />
